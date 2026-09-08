@@ -1,0 +1,98 @@
+import type { Metadata } from "next";
+import ProductHero from "@/components/ProductHero";
+import IconFeatureGrid from "@/components/IconFeatureGrid";
+import SubcategoryModules from "@/components/SubcategoryModules";
+import DownloadPanel from "@/components/DownloadPanel";
+import ProductRange from "@/components/ProductRange";
+import ContactSection from "@/components/ContactSection";
+
+export const metadata: Metadata = {
+  title: "Insulation | Consolidated Energy",
+  description:
+    "Consolidated Energy is the largest independent distributor of insulation in Australia, supplying and installing insulation across the residential, commercial, HVAC and industrial markets.",
+};
+
+const INSULATION_TYPES = [
+  { icon: "home" as const, label: "Ceiling Insulation", description: "Reduces heat loss and gain through the roof space." },
+  { icon: "wave" as const, label: "Acoustic Insulation", description: "Sound-dampening for walls, floors and ceilings." },
+  { icon: "wall" as const, label: "External Wall Insulation", description: "Improves thermal performance through the wall cavity." },
+  { icon: "layers" as const, label: "Wall Wraps", description: "Weather and vapour control layers behind the cladding." },
+  { icon: "shield" as const, label: "Roof Sarking", description: "Reflective and protective sarking under the roof covering." },
+  { icon: "cloud" as const, label: "Stone / Mineral Wool", description: "High-performance rigid insulation for demanding applications." },
+];
+
+export default function InsulationPage() {
+  return (
+    <>
+      <ProductHero
+        eyebrow="Product Range"
+        title="Insulation"
+        tagline="Improved comfort all year round"
+        description="Insulation is the key to true comfort and lower household running costs. Consolidated Energy is the largest independent distributor of insulation in Australia, and the only private insulation company with a national distribution network across Australia's major capitals."
+        variant="insulation"
+      />
+
+      <section className="bg-white py-20 lg:py-24">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-12">
+          <p className="text-black/60 text-[15px] leading-relaxed">
+            Because we&apos;re not tied to one manufacturer, our
+            recommendations are based on product merits &ndash; regardless of
+            brand. We work closely with Australia&apos;s leading
+            manufacturers to secure competitive pricing through our buying
+            power, and we supply and install insulation across the
+            residential builder market, the commercial sector, the HVAC
+            industry and industrial applications.
+          </p>
+          <p className="text-black/60 text-[15px] leading-relaxed">
+            Our product range spans glasswool, polyester, reflective
+            insulation and high-performance rigid options, so whatever the
+            application, we can specify and deliver the right solution
+            supplied and installed by one account.
+          </p>
+        </div>
+      </section>
+
+      <IconFeatureGrid
+        eyebrow="Product Range"
+        title="Insulation product categories"
+        items={INSULATION_TYPES}
+      />
+
+      <SubcategoryModules
+        eyebrow="Applications"
+        title="Specified by application"
+        items={[
+          {
+            icon: "home",
+            title: "Thermal Insulation",
+            description: "Ceiling, wall and roof insulation for year-round comfort.",
+            download: { label: "Thermal range spec sheet", href: "/information-hub#insulation" },
+          },
+          {
+            icon: "wave",
+            title: "Acoustic Insulation",
+            description: "Sound-dampening solutions for walls, floors and ceilings.",
+            download: { label: "Acoustic range spec sheet", href: "/information-hub#insulation" },
+          },
+          {
+            icon: "cloud",
+            title: "Specialty Systems",
+            description: "Wall wraps and stone or mineral wool for high-performance builds.",
+            download: { label: "Specialty systems spec sheet", href: "/information-hub#insulation" },
+          },
+        ]}
+      />
+
+      <DownloadPanel
+        items={[
+          { label: "Insulation product range spec sheet", href: "/information-hub#insulation" },
+          { label: "Warranty terms", href: "/information-hub#insulation" },
+        ]}
+        hubHref="/information-hub#insulation"
+      />
+
+      <ProductRange exclude="insulation" />
+      <ContactSection />
+    </>
+  );
+}
