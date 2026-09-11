@@ -49,9 +49,6 @@ export default function Header() {
             <Link href="/credit-application" className="hover:text-brand-dark transition-colors">
               Customer Credit Application
             </Link>
-            <Link href="#" className="text-brand-green-dark hover:text-brand-dark transition-colors font-medium">
-              Trade Login
-            </Link>
           </nav>
         </div>
       </div>
