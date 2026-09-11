@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import ProductHero from "@/components/ProductHero";
 import IconFeatureGrid from "@/components/IconFeatureGrid";
 import SubcategoryModules from "@/components/SubcategoryModules";
-import DownloadPanel from "@/components/DownloadPanel";
 import ProductRange from "@/components/ProductRange";
 import ContactSection from "@/components/ContactSection";
 
@@ -63,30 +62,19 @@ export default function SolarPowerPage() {
             icon: "panel",
             title: "Solar Panels & Inverters",
             description: "Leading brand panels and inverters sized to the home or business.",
-            download: { label: "Solar panel spec sheet", href: "/information-hub#solar-power" },
           },
           {
             icon: "battery",
             title: "Battery Storage",
             description: "Tesla, Enphase, LG Chem and sonnen battery storage options.",
             specs: ["Tesla Powerwall", "Enphase", "LG Chem ESS", "sonnen"],
-            download: { label: "Battery storage spec sheet", href: "/information-hub#solar-power" },
           },
           {
             icon: "sun",
             title: "Solar Hot Water",
             description: "Rooftop solar hot water systems for new and existing homes.",
-            download: { label: "Solar hot water spec sheet", href: "/information-hub#solar-power" },
           },
         ]}
-      />
-
-      <DownloadPanel
-        items={[
-          { label: "Solar power spec sheet", href: "/information-hub#solar-power" },
-          { label: "Warranty terms", href: "/information-hub#solar-power" },
-        ]}
-        hubHref="/information-hub#solar-power"
       />
 
       <ProductRange exclude="solar" />

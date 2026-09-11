@@ -107,7 +107,10 @@ export default function GasHotWaterPage() {
               "Natural Gas or LPG",
               "Wall-mounted or recess-box install",
             ],
-            download: { label: "GS-20W user manual", href: "/information-hub#gas-hot-water" },
+            download: {
+              label: "GS-20W user manual",
+              href: "/downloads/gas-hot-water/Takagi-manual-GS-20W-AU56-GS-26W-AU56-06272019-R-k488.pdf",
+            },
           },
           {
             title: "GS-26W — 26L/min",
@@ -118,16 +121,29 @@ export default function GasHotWaterPage() {
               "Natural Gas or LPG",
               "Optional remote controller",
             ],
-            download: { label: "GS-26W user manual", href: "/information-hub#gas-hot-water" },
+            download: {
+              label: "GS-26W user manual",
+              href: "/downloads/gas-hot-water/Takagi-manual-GS-20W-AU56-GS-26W-AU56-06272019-R-k488.pdf",
+            },
           },
         ]}
       />
 
       <DownloadPanel
+        eyebrow="Product Downloads"
         items={[
-          { label: "Warranty documentation", href: "/information-hub#gas-hot-water" },
-          { label: "Product brochure", href: "/information-hub#gas-hot-water" },
-          { label: "GS-20W / GS-26W (AU56) user manual", href: "/information-hub#gas-hot-water" },
+          {
+            label: "Warranty documentation",
+            href: "/downloads/gas-hot-water/Takagi-Continuous-Flow-Water-Heating-Products-Warranty-V1-131013.pdf",
+          },
+          {
+            label: "Product brochure",
+            href: "/downloads/gas-hot-water/Takagi-Brochure.pdf",
+          },
+          {
+            label: "GS-20W / GS-26W (AU56) user manual",
+            href: "/downloads/gas-hot-water/Takagi-manual-GS-20W-AU56-GS-26W-AU56-06272019-R-k488.pdf",
+          },
         ]}
         hubHref="/information-hub#gas-hot-water"
       />

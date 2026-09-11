@@ -68,6 +68,8 @@ export default function SubcategoryModules({
               {item.download && (
                 <a
                   href={item.download.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-5 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-wide text-brand-green-dark border-b border-brand-green-dark pb-1 self-start hover:text-brand-dark hover:border-brand-dark transition-colors"
                 >
                   <Icon name="clipboard" className="w-3.5 h-3.5" />

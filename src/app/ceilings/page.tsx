@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import ProductHero from "@/components/ProductHero";
 import SubcategoryModules from "@/components/SubcategoryModules";
-import DownloadPanel from "@/components/DownloadPanel";
 import ProductRange from "@/components/ProductRange";
 import ContactSection from "@/components/ContactSection";
 
@@ -42,24 +41,14 @@ export default function CeilingsPage() {
             icon: "clipboard",
             title: "Project Tendering & Take Off",
             description: "From concept to completion, we can look after the whole process.",
-            download: { label: "Capability statement", href: "/information-hub#ceilings" },
           },
           {
             icon: "home",
             title: "Residential Ceilings",
             description:
               "No matter the size of your home, we have a solution that will fit your needs. We can help design and install.",
-            download: { label: "Residential ceilings brochure", href: "/information-hub#ceilings" },
           },
         ]}
-      />
-
-      <DownloadPanel
-        items={[
-          { label: "Precision Ceilings capability statement", href: "/information-hub#ceilings" },
-          { label: "Warranty terms", href: "/information-hub#ceilings" },
-        ]}
-        hubHref="/information-hub#ceilings"
       />
 
       <section className="bg-white py-16 lg:py-20">

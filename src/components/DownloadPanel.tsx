@@ -40,6 +40,8 @@ export default function DownloadPanel({
             <Reveal key={item.label} delay={(i % 3) * 80}>
               <a
                 href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center gap-4 bg-white border border-black/10 px-5 py-4 hover:border-brand-green-dark transition-colors"
               >
                 <span className="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-brand-cream text-brand-green-dark group-hover:bg-brand-green group-hover:text-brand-dark transition-colors">

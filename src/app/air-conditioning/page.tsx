@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import ProductHero from "@/components/ProductHero";
 import SubcategoryModules from "@/components/SubcategoryModules";
-import DownloadPanel from "@/components/DownloadPanel";
 import ProductRange from "@/components/ProductRange";
 import ContactSection from "@/components/ContactSection";
 
@@ -51,7 +50,6 @@ export default function AirConditioningPage() {
             description:
               "Whole-house climate control, sized to the home for efficient, even heating and cooling.",
             specs: ["Zoned whole-house control", "Sized to the home", "Fully warranted"],
-            download: { label: "Ducted systems spec sheet", href: "/information-hub#air-conditioning" },
           },
           {
             icon: "fan",
@@ -59,17 +57,8 @@ export default function AirConditioningPage() {
             description:
               "Single-room and multi-zone systems from leading manufacturers, installed and fully warranted.",
             specs: ["Single-room & multi-zone", "Leading brand units", "Licensed installation"],
-            download: { label: "Split systems spec sheet", href: "/information-hub#air-conditioning" },
           },
         ]}
-      />
-
-      <DownloadPanel
-        items={[
-          { label: "Air conditioning spec sheet", href: "/information-hub#air-conditioning" },
-          { label: "Warranty terms", href: "/information-hub#air-conditioning" },
-        ]}
-        hubHref="/information-hub#air-conditioning"
       />
 
       <ProductRange exclude="aircon" />

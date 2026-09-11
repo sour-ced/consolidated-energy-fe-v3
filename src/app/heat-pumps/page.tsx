@@ -92,7 +92,10 @@ export default function HeatPumpsPage() {
             description:
               "The compact option for standard households, with the full Enviroheat feature set in a smaller footprint.",
             specs: ["Plug-in power point install", "Dual anode corrosion protection", "Micro-channel condenser"],
-            download: { label: "M3 brochure & manual", href: "/information-hub#heat-pumps" },
+            download: {
+              label: "M3 brochure",
+              href: "/downloads/heat-pumps/EnviroheatBrochure2020M3.pdf",
+            },
           },
           {
             icon: "gauge",
@@ -100,16 +103,33 @@ export default function HeatPumpsPage() {
             description:
               "Higher-capacity model for larger households, pairing with rooftop solar to maximise daytime generation.",
             specs: ["Plug-in power point install", "18kW thermal battery capacity", "Timer control for solar offset"],
-            download: { label: "M9 brochure & manual", href: "/information-hub#heat-pumps" },
+            download: {
+              label: "M9 brochure",
+              href: "/downloads/heat-pumps/Brochure_M9__ENVIROHEAT-CONSOLIDATED-mk3b.pdf",
+            },
           },
         ]}
       />
 
       <DownloadPanel
+        eyebrow="Product Downloads"
         items={[
-          { label: "Enviroheat product brochure", href: "/information-hub#heat-pumps" },
-          { label: "M3 user manual", href: "/information-hub#heat-pumps" },
-          { label: "M9 user manual", href: "/information-hub#heat-pumps" },
+          {
+            label: "M3 brochure",
+            href: "/downloads/heat-pumps/EnviroheatBrochure2020M3.pdf",
+          },
+          {
+            label: "M9 brochure",
+            href: "/downloads/heat-pumps/Brochure_M9__ENVIROHEAT-CONSOLIDATED-mk3b.pdf",
+          },
+          {
+            label: "M3 user manual",
+            href: "/downloads/heat-pumps/UserManual_Enviroheat_CONSOLIDATED_rev500WEB_M3.pdf",
+          },
+          {
+            label: "M9 manual",
+            href: "/downloads/heat-pumps/User-Manual_HPPLUS_M9__ENVIROHEAT-CONSOLIDATED_rev102PRINT.pdf",
+          },
         ]}
         hubHref="/information-hub#heat-pumps"
       />

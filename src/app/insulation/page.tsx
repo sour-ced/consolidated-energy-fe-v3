@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import ProductHero from "@/components/ProductHero";
 import IconFeatureGrid from "@/components/IconFeatureGrid";
 import SubcategoryModules from "@/components/SubcategoryModules";
-import DownloadPanel from "@/components/DownloadPanel";
 import ProductRange from "@/components/ProductRange";
 import ContactSection from "@/components/ContactSection";
 
@@ -66,29 +65,18 @@ export default function InsulationPage() {
             icon: "home",
             title: "Thermal Insulation",
             description: "Ceiling, wall and roof insulation for year-round comfort.",
-            download: { label: "Thermal range spec sheet", href: "/information-hub#insulation" },
           },
           {
             icon: "wave",
             title: "Acoustic Insulation",
             description: "Sound-dampening solutions for walls, floors and ceilings.",
-            download: { label: "Acoustic range spec sheet", href: "/information-hub#insulation" },
           },
           {
             icon: "cloud",
             title: "Specialty Systems",
             description: "Wall wraps and stone or mineral wool for high-performance builds.",
-            download: { label: "Specialty systems spec sheet", href: "/information-hub#insulation" },
           },
         ]}
-      />
-
-      <DownloadPanel
-        items={[
-          { label: "Insulation product range spec sheet", href: "/information-hub#insulation" },
-          { label: "Warranty terms", href: "/information-hub#insulation" },
-        ]}
-        hubHref="/information-hub#insulation"
       />
 
       <ProductRange exclude="insulation" />

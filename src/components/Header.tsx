@@ -20,7 +20,7 @@ const NAV_LINKS = [
   { label: "Products & Services", href: "/products", dropdown: PRODUCT_LINKS },
   { label: "Our Network", href: "/our-network" },
   { label: "Information Hub", href: "/information-hub" },
-  { label: "Careers", href: "/careers" },
+  { label: "Careers", href: "https://ambrosiumgroup.careers.hibob.com/jobs", target: "_blank" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -97,6 +97,8 @@ export default function Header() {
               <Link
                 key={link.label}
                 href={link.href}
+                target={link.target}
+                rel={link.target === "_blank" ? "noopener noreferrer" : undefined}
                 className={`pb-1 border-b transition-colors ${
                   isActive(link.href)
                     ? "text-brand-dark border-brand-green"
@@ -205,6 +207,8 @@ export default function Header() {
                 <Link
                   key={link.label}
                   href={link.href}
+                  target={link.target}
+                  rel={link.target === "_blank" ? "noopener noreferrer" : undefined}
                   onClick={() => setOpen(false)}
                   className={`py-2.5 ${isActive(link.href) ? "text-brand-green-dark" : "text-brand-dark/70"}`}
                 >
