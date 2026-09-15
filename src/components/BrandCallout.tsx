@@ -16,7 +16,7 @@ export default function BrandCallout({
   children: ReactNode;
 }) {
   return (
-    <section className="bg-brand-cream py-20 lg:py-24">
+    <section className="bg-section py-20 lg:py-24">
       <Reveal className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-[220px_1fr] gap-10 items-start">
         <Image
           src={logoSrc}
@@ -25,7 +25,7 @@ export default function BrandCallout({
           height={logoHeight}
           className="h-14 w-auto"
         />
-        <div className="text-black/60 text-[15px] leading-relaxed max-w-2xl flex flex-col gap-4">
+        <div className="text-ink/60 text-[15px] leading-relaxed max-w-2xl flex flex-col gap-4">
           {children}
         </div>
       </Reveal>

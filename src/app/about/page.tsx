@@ -41,9 +41,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 lg:py-24">
+      <section className="bg-surface py-20 lg:py-24">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-12">
-          <Reveal className="text-black/60 text-[15px] leading-relaxed flex flex-col gap-4">
+          <Reveal className="text-ink/60 text-[15px] leading-relaxed flex flex-col gap-4">
             <p>
               We currently service over 500 builder customers from office and
               warehouse locations around Australia. Our product supply and
@@ -63,9 +63,9 @@ export default function AboutPage() {
 
           <div className="grid gap-6">
             {VALUES.map((value, i) => (
-              <Reveal key={value.title} delay={i * 100} className="bg-brand-cream p-7">
-                <h2 className="font-display text-xl text-brand-dark">{value.title}</h2>
-                <p className="mt-2 text-[14px] text-black/55 leading-relaxed">
+              <Reveal key={value.title} delay={i * 100} className="bg-section p-7">
+                <h2 className="font-display text-xl text-ink">{value.title}</h2>
+                <p className="mt-2 text-[14px] text-ink/55 leading-relaxed">
                   {value.description}
                 </p>
               </Reveal>

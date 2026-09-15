@@ -30,16 +30,16 @@ export default function IconFeatureGrid({
       : "sm:grid-cols-2 lg:grid-cols-3";
 
   return (
-    <section className="bg-white py-20 lg:py-24">
+    <section className="bg-surface py-20 lg:py-24">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <p className="text-brand-green-dark text-[12px] font-bold uppercase tracking-[0.15em] mb-3">
           {eyebrow}
         </p>
-        <h2 className="font-display text-3xl sm:text-4xl leading-[1.1] text-brand-dark max-w-xl mb-4">
+        <h2 className="font-display text-3xl sm:text-4xl leading-[1.1] text-ink max-w-xl mb-4">
           {title}
         </h2>
         {intro && (
-          <p className="text-black/55 text-[15px] leading-relaxed max-w-2xl mb-12">
+          <p className="text-ink/55 text-[15px] leading-relaxed max-w-2xl mb-12">
             {intro}
           </p>
         )}
@@ -47,15 +47,15 @@ export default function IconFeatureGrid({
         <div className={`grid grid-cols-1 ${colsClass} gap-x-8 gap-y-10 ${!intro ? "mt-12" : ""}`}>
           {items.map((item, i) => (
             <Reveal key={item.label} delay={(i % 6) * 60} className="flex items-start gap-4">
-              <span className="shrink-0 inline-flex items-center justify-center w-11 h-11 rounded-full bg-brand-cream text-brand-green-dark">
+              <span className="shrink-0 inline-flex items-center justify-center w-11 h-11 rounded-full bg-section text-brand-green-dark">
                 <Icon name={item.icon} className="w-5 h-5" />
               </span>
               <div>
-                <p className="font-display text-[15px] tracking-wide text-brand-dark leading-tight">
+                <p className="font-display text-[15px] tracking-wide text-ink leading-tight">
                   {item.label}
                 </p>
                 {item.description && (
-                  <p className="mt-1.5 text-[13px] text-black/55 leading-relaxed">
+                  <p className="mt-1.5 text-[13px] text-ink/55 leading-relaxed">
                     {item.description}
                   </p>
                 )}

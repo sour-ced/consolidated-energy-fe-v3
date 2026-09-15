@@ -23,7 +23,7 @@ export default function EnquiryForm() {
   }
 
   return (
-    <div className="bg-white p-7 sm:p-9 border border-black/10">
+    <div className="bg-surface p-7 sm:p-9 border border-ink/10">
       <p className="text-brand-green-dark text-[11px] font-bold uppercase tracking-[0.15em] mb-6">
         Send an Enquiry
       </p>
@@ -32,7 +32,7 @@ export default function EnquiryForm() {
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor="company"
-            className="text-[10px] font-bold uppercase tracking-[0.12em] text-black/40"
+            className="text-[10px] font-bold uppercase tracking-[0.12em] text-ink/40"
           >
             Company
           </label>
@@ -40,7 +40,7 @@ export default function EnquiryForm() {
             id="company"
             name="company"
             type="text"
-            className="border border-black/15 px-3.5 py-2.5 text-[14px] text-brand-dark focus:outline-none focus:border-brand-green-dark"
+            className="border border-ink/15 px-3.5 py-2.5 text-[14px] text-ink focus:outline-none focus:border-brand-green-dark"
           />
         </div>
 
@@ -48,7 +48,7 @@ export default function EnquiryForm() {
           <div className="flex flex-col gap-1.5">
             <label
               htmlFor="name"
-              className="text-[10px] font-bold uppercase tracking-[0.12em] text-black/40"
+              className="text-[10px] font-bold uppercase tracking-[0.12em] text-ink/40"
             >
               Name
             </label>
@@ -56,13 +56,13 @@ export default function EnquiryForm() {
               id="name"
               name="name"
               type="text"
-              className="border border-black/15 px-3.5 py-2.5 text-[14px] text-brand-dark focus:outline-none focus:border-brand-green-dark"
+              className="border border-ink/15 px-3.5 py-2.5 text-[14px] text-ink focus:outline-none focus:border-brand-green-dark"
             />
           </div>
           <div className="flex flex-col gap-1.5">
             <label
               htmlFor="state"
-              className="text-[10px] font-bold uppercase tracking-[0.12em] text-black/40"
+              className="text-[10px] font-bold uppercase tracking-[0.12em] text-ink/40"
             >
               State
             </label>
@@ -70,13 +70,13 @@ export default function EnquiryForm() {
               id="state"
               name="state"
               type="text"
-              className="border border-black/15 px-3.5 py-2.5 text-[14px] text-brand-dark focus:outline-none focus:border-brand-green-dark"
+              className="border border-ink/15 px-3.5 py-2.5 text-[14px] text-ink focus:outline-none focus:border-brand-green-dark"
             />
           </div>
         </div>
 
         <div className="flex flex-col gap-2.5">
-          <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-black/40">
+          <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-ink/40">
             Products of Interest
           </span>
           <div className="flex flex-wrap gap-2">
@@ -91,7 +91,7 @@ export default function EnquiryForm() {
                   className={`px-3.5 py-1.5 text-[12px] rounded-sm border transition-colors ${
                     active
                       ? "border-brand-green-dark text-brand-green-dark bg-brand-green/10"
-                      : "border-black/15 text-black/55 hover:border-black/30"
+                      : "border-ink/15 text-ink/55 hover:border-ink/30"
                   }`}
                 >
                   {product}
@@ -104,7 +104,7 @@ export default function EnquiryForm() {
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor="message"
-            className="text-[10px] font-bold uppercase tracking-[0.12em] text-black/40"
+            className="text-[10px] font-bold uppercase tracking-[0.12em] text-ink/40"
           >
             Message
           </label>
@@ -112,7 +112,7 @@ export default function EnquiryForm() {
             id="message"
             name="message"
             rows={4}
-            className="border border-black/15 px-3.5 py-2.5 text-[14px] text-brand-dark resize-none focus:outline-none focus:border-brand-green-dark"
+            className="border border-ink/15 px-3.5 py-2.5 text-[14px] text-ink resize-none focus:outline-none focus:border-brand-green-dark"
           />
         </div>
 

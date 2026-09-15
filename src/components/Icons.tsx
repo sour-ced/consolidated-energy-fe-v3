@@ -26,7 +26,8 @@ export type IconName =
   | "fan"
   | "wind"
   | "clipboard"
-  | "home";
+  | "home"
+  | "moon";
 
 const paths: Record<IconName, React.ReactNode> = {
   star: (
@@ -165,6 +166,9 @@ const paths: Record<IconName, React.ReactNode> = {
   ),
   home: (
     <path d="M4 11l8-7 8 7M6 9.5V20h12V9.5" strokeLinecap="round" strokeLinejoin="round" />
+  ),
+  moon: (
+    <path d="M20 14.5A8.5 8.5 0 119.5 4 6.8 6.8 0 0020 14.5z" strokeLinejoin="round" />
   ),
 };
 

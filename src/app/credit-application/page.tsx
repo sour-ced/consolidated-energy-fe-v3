@@ -42,25 +42,25 @@ export default function CreditApplicationPage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 lg:py-24">
+      <section className="bg-surface py-20 lg:py-24">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-[1fr_360px] gap-12">
           <div>
             <p className="text-brand-green-dark text-[12px] font-bold uppercase tracking-[0.15em] mb-3">
               How it works
             </p>
-            <h2 className="font-display text-3xl sm:text-4xl leading-[1.1] text-brand-dark max-w-xl mb-10">
+            <h2 className="font-display text-3xl sm:text-4xl leading-[1.1] text-ink max-w-xl mb-10">
               Three steps to a trade account.
             </h2>
 
             <div className="grid gap-6">
               {STEPS.map((step, i) => (
                 <div key={step.title} className="flex items-start gap-5">
-                  <span className="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full bg-brand-cream font-display text-lg text-brand-green-dark">
+                  <span className="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full bg-section font-display text-lg text-brand-green-dark">
                     {i + 1}
                   </span>
                   <div>
-                    <h3 className="font-display text-lg text-brand-dark">{step.title}</h3>
-                    <p className="mt-1 text-[14px] text-black/55 leading-relaxed max-w-md">
+                    <h3 className="font-display text-lg text-ink">{step.title}</h3>
+                    <p className="mt-1 text-[14px] text-ink/55 leading-relaxed max-w-md">
                       {step.description}
                     </p>
                   </div>
@@ -69,23 +69,23 @@ export default function CreditApplicationPage() {
             </div>
           </div>
 
-          <div className="bg-brand-cream border border-black/10 p-7 h-fit">
-            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-black/40 mb-4">
+          <div className="bg-section border border-ink/10 p-7 h-fit">
+            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-ink/40 mb-4">
               Download the form
             </p>
             <a
               href="/information-hub"
-              className="group flex items-center gap-4 bg-white border border-black/10 px-5 py-4 hover:border-brand-green-dark transition-colors"
+              className="group flex items-center gap-4 bg-surface border border-ink/10 px-5 py-4 hover:border-brand-green-dark transition-colors"
             >
-              <span className="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-brand-cream text-brand-green-dark group-hover:bg-brand-green group-hover:text-brand-dark transition-colors">
+              <span className="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-section text-brand-green-dark group-hover:bg-brand-green group-hover:text-ink transition-colors">
                 <Icon name="clipboard" className="w-5 h-5" />
               </span>
-              <span className="flex-1 text-[14px] font-medium text-brand-dark leading-snug">
+              <span className="flex-1 text-[14px] font-medium text-ink leading-snug">
                 Customer Credit Application form
               </span>
               <span className="shrink-0 text-[11px] font-bold uppercase text-brand-green-dark">PDF</span>
             </a>
-            <p className="mt-5 text-[13px] text-black/50 leading-relaxed">
+            <p className="mt-5 text-[13px] text-ink/50 leading-relaxed">
               Questions about your application? Email{" "}
               <a href="mailto:info@consolidatedenergy.com.au" className="text-brand-green-dark hover:underline">
                 info@consolidatedenergy.com.au

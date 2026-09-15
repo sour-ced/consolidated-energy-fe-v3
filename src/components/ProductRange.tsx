@@ -78,7 +78,7 @@ export default function ProductRange({
     : PRODUCTS;
 
   return (
-    <section id="products" className="bg-brand-cream py-20 lg:py-24">
+    <section id="products" className="bg-section py-20 lg:py-24">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <Reveal className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
           <div>
@@ -86,7 +86,7 @@ export default function ProductRange({
               {eyebrow}
             </p>
             {heading && (
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-[42px] leading-[1.1] text-brand-dark max-w-xl">
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-[42px] leading-[1.1] text-ink max-w-xl">
                 {heading}
               </h2>
             )}
@@ -94,7 +94,7 @@ export default function ProductRange({
           {showAllLink && (
             <Link
               href="/products"
-              className="text-[12px] font-bold uppercase tracking-wide text-brand-dark border-b border-brand-dark pb-1 whitespace-nowrap hover:text-brand-green-dark hover:border-brand-green-dark transition-colors"
+              className="text-[12px] font-bold uppercase tracking-wide text-ink border-b border-ink pb-1 whitespace-nowrap hover:text-brand-green-dark hover:border-brand-green-dark transition-colors"
             >
               All Products
             </Link>
@@ -106,7 +106,7 @@ export default function ProductRange({
             <Reveal key={product.title} delay={(i % 3) * 100} className="h-full">
               <Link
                 href={product.href}
-                className="group bg-white border border-black/5 flex flex-col h-full hover:shadow-lg transition-shadow"
+                className="group bg-surface border border-ink/5 flex flex-col h-full hover:shadow-lg transition-shadow"
               >
                 <ProductImage
                   variant={product.variant}
@@ -115,11 +115,11 @@ export default function ProductRange({
                   tagAccent={showTags ? product.tagAccent : undefined}
                 />
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="font-display text-lg text-brand-dark">
+                  <h3 className="font-display text-lg text-ink">
                     {product.title}
                   </h3>
                   {!compact && (
-                    <p className="mt-2 text-[13px] text-black/55 leading-relaxed">
+                    <p className="mt-2 text-[13px] text-ink/55 leading-relaxed">
                       {product.description}
                     </p>
                   )}

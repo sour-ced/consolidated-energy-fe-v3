@@ -37,9 +37,9 @@ export default function HeatPumpsPage() {
         variant="heatpumps"
       />
 
-      <section className="bg-white py-20 lg:py-24">
+      <section className="bg-surface py-20 lg:py-24">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-12">
-          <div className="text-black/60 text-[15px] leading-relaxed flex flex-col gap-4">
+          <div className="text-ink/60 text-[15px] leading-relaxed flex flex-col gap-4">
             <p>
               A heat pump takes the heat from surrounding air and transfers
               it to water, working in the opposite way to a refrigerator. A
@@ -56,16 +56,16 @@ export default function HeatPumpsPage() {
             </p>
           </div>
           <div className="flex flex-col gap-6">
-            <div className="bg-brand-cream p-6">
-              <p className="font-display text-3xl text-brand-dark">4kW+</p>
-              <p className="mt-1 text-[13px] text-black/55 leading-relaxed">
+            <div className="bg-section p-6">
+              <p className="font-display text-3xl text-ink">4kW+</p>
+              <p className="mt-1 text-[13px] text-ink/55 leading-relaxed">
                 Every 1kW of electricity is converted into over 4kW of heat
                 output.
               </p>
             </div>
-            <div className="bg-brand-cream p-6">
-              <p className="font-display text-3xl text-brand-dark">18kW</p>
-              <p className="mt-1 text-[13px] text-black/55 leading-relaxed">
+            <div className="bg-section p-6">
+              <p className="font-display text-3xl text-ink">18kW</p>
+              <p className="mt-1 text-[13px] text-ink/55 leading-relaxed">
                 Store up to 18kW of heat in a single Enviroheat tank for
                 nighttime use, complementing rooftop solar installations.
               </p>

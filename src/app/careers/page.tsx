@@ -42,16 +42,16 @@ export default function CareersPage() {
         columns={4}
       />
 
-      <section className="bg-brand-cream py-16 lg:py-20">
+      <section className="bg-section py-16 lg:py-20">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
           <div>
             <p className="text-brand-green-dark text-[12px] font-bold uppercase tracking-[0.15em] mb-3">
               Current Openings
             </p>
-            <h2 className="font-display text-2xl sm:text-3xl leading-[1.1] text-brand-dark max-w-lg">
+            <h2 className="font-display text-2xl sm:text-3xl leading-[1.1] text-ink max-w-lg">
               No open roles right now — we&apos;d still like to hear from you.
             </h2>
-            <p className="mt-3 text-black/55 text-[15px] leading-relaxed max-w-lg">
+            <p className="mt-3 text-ink/55 text-[15px] leading-relaxed max-w-lg">
               Send us your resume and we&apos;ll keep it on file for our next
               round of hiring across sales, warehouse and installation roles.
             </p>

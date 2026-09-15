@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
+import ThemeToggle from "./ThemeToggle";
+import { useDarkMode } from "./useDarkMode";
 
 const PRODUCT_LINKS = [
   { label: "Full Product Range", href: "/products" },
@@ -30,6 +32,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const pathname = usePathname();
+  const isDark = useDarkMode();
 
   function isActive(href: string) {
     return href === "/products"
@@ -38,24 +41,25 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-brand-cream text-brand-dark">
-      <div className="hidden sm:block border-b border-black/10">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-10 h-9 flex items-center justify-between text-[11px] tracking-wide text-black/55">
+    <header className="sticky top-0 z-50 bg-section text-ink">
+      <div className="hidden sm:block border-b border-ink/10">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10 h-9 flex items-center justify-between text-[11px] tracking-wide text-ink/55">
           <span>ABN 89 064 338 076</span>
           <nav className="flex items-center gap-6">
-            <Link href="/information-hub" className="hover:text-brand-dark transition-colors">
+            <Link href="/information-hub" className="hover:text-ink transition-colors">
               Downloads
             </Link>
-            <Link href="/credit-application" className="hover:text-brand-dark transition-colors">
+            <Link href="/credit-application" className="hover:text-ink transition-colors">
               Customer Credit Application
             </Link>
+            <ThemeToggle />
           </nav>
         </div>
       </div>
 
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10 h-20 flex items-center justify-between gap-8">
         <Link href="/" aria-label="Consolidated Energy home">
-          <Logo variant="dark" />
+          <Logo variant={isDark ? "light" : "dark"} />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8 text-[13px] font-medium tracking-wide">
@@ -66,8 +70,8 @@ export default function Header() {
                   href={link.href}
                   className={`flex items-center gap-1.5 pb-1 border-b transition-colors ${
                     isActive(link.href)
-                      ? "text-brand-dark border-brand-green"
-                      : "text-brand-dark/60 border-transparent group-hover:text-brand-dark"
+                      ? "text-ink border-brand-green"
+                      : "text-ink/60 border-transparent group-hover:text-ink"
                   }`}
                 >
                   {link.label}
@@ -77,12 +81,12 @@ export default function Header() {
                 </Link>
 
                 <div className="invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-150 absolute left-1/2 -translate-x-1/2 top-full pt-3 z-50">
-                  <div className="w-64 bg-white border border-black/10 shadow-xl py-2">
+                  <div className="w-64 bg-surface border border-ink/10 shadow-xl py-2">
                     {link.dropdown.map((item) => (
                       <Link
                         key={item.label}
                         href={item.href}
-                        className="block px-5 py-2.5 text-[13px] text-brand-dark/75 hover:text-brand-dark hover:bg-brand-cream transition-colors"
+                        className="block px-5 py-2.5 text-[13px] text-ink/75 hover:text-ink hover:bg-section transition-colors"
                       >
                         {item.label}
                       </Link>
@@ -98,8 +102,8 @@ export default function Header() {
                 rel={link.target === "_blank" ? "noopener noreferrer" : undefined}
                 className={`pb-1 border-b transition-colors ${
                   isActive(link.href)
-                    ? "text-brand-dark border-brand-green"
-                    : "text-brand-dark/60 border-transparent hover:text-brand-dark"
+                    ? "text-ink border-brand-green"
+                    : "text-ink/60 border-transparent hover:text-ink"
                 }`}
               >
                 {link.label}
@@ -121,7 +125,7 @@ export default function Header() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="lg:hidden inline-flex items-center justify-center w-9 h-9 text-brand-dark"
+            className="lg:hidden inline-flex items-center justify-center w-9 h-9 text-ink"
           >
             <svg
               viewBox="0 0 24 24"
@@ -143,13 +147,13 @@ export default function Header() {
       </div>
 
       <div
-        className={`lg:hidden grid bg-brand-cream overflow-hidden transition-[grid-template-rows] duration-300 ease-in-out ${
+        className={`lg:hidden grid bg-section overflow-hidden transition-[grid-template-rows] duration-300 ease-in-out ${
           open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         }`}
       >
         <div className="overflow-hidden">
           <nav
-            className={`border-t border-black/10 mx-auto max-w-[1400px] px-6 py-5 flex flex-col gap-1 text-[13px] font-medium tracking-wide transition-all duration-300 ease-in-out ${
+            className={`border-t border-ink/10 mx-auto max-w-[1400px] px-6 py-5 flex flex-col gap-1 text-[13px] font-medium tracking-wide transition-all duration-300 ease-in-out ${
               open ? "opacity-100 translate-y-0" : "-translate-y-2 opacity-0"
             }`}
           >
@@ -160,7 +164,7 @@ export default function Header() {
                     <Link
                       href={link.href}
                       onClick={() => setOpen(false)}
-                      className={isActive(link.href) ? "text-brand-green-dark" : "text-brand-dark/70"}
+                      className={isActive(link.href) ? "text-brand-green-dark" : "text-ink/70"}
                     >
                       {link.label}
                     </Link>
@@ -168,7 +172,7 @@ export default function Header() {
                       type="button"
                       aria-label="Toggle products submenu"
                       onClick={() => setMobileProductsOpen((v) => !v)}
-                      className="p-1 text-brand-dark/50"
+                      className="p-1 text-ink/50"
                     >
                       <svg
                         viewBox="0 0 12 8"
@@ -186,13 +190,13 @@ export default function Header() {
                       mobileProductsOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                     }`}
                   >
-                    <div className="overflow-hidden flex flex-col pl-4 border-l border-black/10 ml-1">
+                    <div className="overflow-hidden flex flex-col pl-4 border-l border-ink/10 ml-1">
                       {link.dropdown.map((item) => (
                         <Link
                           key={item.label}
                           href={item.href}
                           onClick={() => setOpen(false)}
-                          className="py-2 text-[13px] text-brand-dark/60"
+                          className="py-2 text-[13px] text-ink/60"
                         >
                           {item.label}
                         </Link>
@@ -207,12 +211,16 @@ export default function Header() {
                   target={link.target}
                   rel={link.target === "_blank" ? "noopener noreferrer" : undefined}
                   onClick={() => setOpen(false)}
-                  className={`py-2.5 ${isActive(link.href) ? "text-brand-green-dark" : "text-brand-dark/70"}`}
+                  className={`py-2.5 ${isActive(link.href) ? "text-brand-green-dark" : "text-ink/70"}`}
                 >
                   {link.label}
                 </Link>
               )
             )}
+            <div className="flex items-center justify-between py-2.5 border-t border-ink/10 mt-1">
+              <span className="text-ink/50">Theme</span>
+              <ThemeToggle />
+            </div>
             <Link
               href="/contact"
               onClick={() => setOpen(false)}

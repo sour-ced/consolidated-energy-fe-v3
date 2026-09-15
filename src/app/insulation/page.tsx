@@ -31,9 +31,9 @@ export default function InsulationPage() {
         variant="insulation"
       />
 
-      <section className="bg-white py-20 lg:py-24">
+      <section className="bg-surface py-20 lg:py-24">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-12">
-          <p className="text-black/60 text-[15px] leading-relaxed">
+          <p className="text-ink/60 text-[15px] leading-relaxed">
             Because we&apos;re not tied to one manufacturer, our
             recommendations are based on product merits &ndash; regardless of
             brand. We work closely with Australia&apos;s leading
@@ -42,7 +42,7 @@ export default function InsulationPage() {
             residential builder market, the commercial sector, the HVAC
             industry and industrial applications.
           </p>
-          <p className="text-black/60 text-[15px] leading-relaxed">
+          <p className="text-ink/60 text-[15px] leading-relaxed">
             Our product range spans glasswool, polyester, reflective
             insulation and high-performance rigid options, so whatever the
             application, we can specify and deliver the right solution

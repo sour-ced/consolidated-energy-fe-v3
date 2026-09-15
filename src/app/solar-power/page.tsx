@@ -31,15 +31,15 @@ export default function SolarPowerPage() {
         variant="solar"
       />
 
-      <section className="bg-white py-20 lg:py-24">
+      <section className="bg-surface py-20 lg:py-24">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
           <p className="text-brand-green-dark text-[12px] font-bold uppercase tracking-[0.15em] mb-3">
             Clean, sustainable energy
           </p>
-          <h2 className="font-display text-3xl sm:text-4xl leading-[1.1] text-brand-dark max-w-2xl mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl leading-[1.1] text-ink max-w-2xl mb-6">
             Make the sun work for you.
           </h2>
-          <p className="text-black/60 text-[15px] leading-relaxed max-w-2xl">
+          <p className="text-ink/60 text-[15px] leading-relaxed max-w-2xl">
             Consolidated Energy is a major supplier to the building industry
             and an associate member of the Clean Energy Council, employing
             accredited CEC designers and installers across residential,

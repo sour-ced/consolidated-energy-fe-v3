@@ -31,16 +31,16 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-brand-cream py-20 lg:py-24">
+      <section className="bg-section py-20 lg:py-24">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
           <Reveal>
             <p className="text-brand-green-dark text-[12px] font-bold uppercase tracking-[0.15em] mb-3">
               Find Your Local Office
             </p>
-            <h2 className="font-display text-3xl sm:text-4xl leading-[1.1] text-brand-dark max-w-md mb-5">
+            <h2 className="font-display text-3xl sm:text-4xl leading-[1.1] text-ink max-w-md mb-5">
               Our national network, state by state.
             </h2>
-            <p className="text-black/55 text-[15px] leading-relaxed max-w-sm mb-8">
+            <p className="text-ink/55 text-[15px] leading-relaxed max-w-sm mb-8">
               Wherever you are building, there&apos;s a local Consolidated
               Energy team ready to help, backed by offices and warehouses
               across the country.
@@ -49,7 +49,7 @@ export default function ContactPage() {
               {STATES.map((state) => (
                 <span
                   key={state}
-                  className="px-4 py-2 text-[12px] font-bold rounded-sm border text-brand-dark/70 border-black/15"
+                  className="px-4 py-2 text-[12px] font-bold rounded-sm border text-ink/70 border-ink/15"
                 >
                   {state}
                 </span>
@@ -64,16 +64,16 @@ export default function ContactPage() {
 
       <OfficeLocations />
 
-      <section id="enquiry" className="bg-brand-cream py-20 lg:py-24">
+      <section id="enquiry" className="bg-section py-20 lg:py-24">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-12">
           <div className="flex flex-col justify-center">
             <p className="text-brand-green-dark text-[12px] font-bold uppercase tracking-[0.15em] mb-3">
               Send an Enquiry
             </p>
-            <h2 className="font-display text-3xl sm:text-4xl leading-[1.1] text-brand-dark max-w-md">
+            <h2 className="font-display text-3xl sm:text-4xl leading-[1.1] text-ink max-w-md">
               Open a trade account or ask us a question.
             </h2>
-            <p className="mt-5 text-black/55 text-[15px] leading-relaxed max-w-sm">
+            <p className="mt-5 text-ink/55 text-[15px] leading-relaxed max-w-sm">
               Fill in the form and a member of our team will get back to you,
               or email us directly at{" "}
               <a

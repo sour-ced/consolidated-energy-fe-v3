@@ -350,16 +350,16 @@ function DocLink({ doc }: { doc: Doc }) {
       target={available ? "_blank" : undefined}
       rel={available ? "noopener noreferrer" : undefined}
       aria-disabled={!available}
-      className={`group flex items-center gap-4 bg-white border border-black/10 px-5 py-4 transition-colors ${
+      className={`group flex items-center gap-4 bg-surface border border-ink/10 px-5 py-4 transition-colors ${
         available
           ? "hover:border-brand-green-dark"
           : "opacity-50 pointer-events-none"
       }`}
     >
-      <span className="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full bg-brand-cream text-brand-green-dark group-hover:bg-brand-green group-hover:text-brand-dark transition-colors">
+      <span className="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full bg-section text-brand-green-dark group-hover:bg-brand-green group-hover:text-ink transition-colors">
         <Icon name="clipboard" className="w-4 h-4" />
       </span>
-      <span className="flex-1 text-[13.5px] font-medium text-brand-dark leading-snug">
+      <span className="flex-1 text-[13.5px] font-medium text-ink leading-snug">
         {doc.label}
       </span>
       <span className="shrink-0 text-[10px] font-bold uppercase text-brand-green-dark whitespace-nowrap">
@@ -389,27 +389,27 @@ export default function InformationHubPage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 lg:py-20">
+      <section className="bg-surface py-16 lg:py-20">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid gap-10">
           {CATEGORIES.map((category, i) => (
             <Reveal
               key={category.id}
               id={category.id}
               delay={(i % 3) * 60}
-              className="scroll-mt-24 bg-brand-cream border border-black/5 p-7 lg:p-9"
+              className="scroll-mt-24 bg-section border border-ink/5 p-7 lg:p-9"
             >
               <div className="flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-10">
                 <div className="flex items-center gap-4 lg:w-64 shrink-0">
-                  <span className="shrink-0 inline-flex items-center justify-center w-11 h-11 rounded-full bg-white text-brand-green-dark">
+                  <span className="shrink-0 inline-flex items-center justify-center w-11 h-11 rounded-full bg-surface text-brand-green-dark">
                     <Icon name={category.icon} className="w-5 h-5" />
                   </span>
                   <div>
-                    <h2 className="font-display text-xl text-brand-dark leading-tight">
+                    <h2 className="font-display text-xl text-ink leading-tight">
                       {category.title}
                     </h2>
                     <Link
                       href={category.productHref}
-                      className="text-[12px] font-bold uppercase tracking-wide text-brand-green-dark hover:text-brand-dark transition-colors"
+                      className="text-[12px] font-bold uppercase tracking-wide text-brand-green-dark hover:text-ink transition-colors"
                     >
                       View product page →
                     </Link>
@@ -420,7 +420,7 @@ export default function InformationHubPage() {
                   {category.groups
                     ? category.groups.map((group) => (
                         <div key={group.label}>
-                          <p className="text-[11px] font-bold uppercase tracking-wide text-black/40 mb-3">
+                          <p className="text-[11px] font-bold uppercase tracking-wide text-ink/40 mb-3">
                             {group.label}
                           </p>
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -444,16 +444,16 @@ export default function InformationHubPage() {
         </div>
       </section>
 
-      <section className="bg-brand-cream py-16 lg:py-20 border-t border-black/5">
+      <section className="bg-section py-16 lg:py-20 border-t border-ink/5">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
           <div>
             <p className="text-brand-green-dark text-[12px] font-bold uppercase tracking-[0.15em] mb-3">
               Company Documents
             </p>
-            <h2 className="font-display text-2xl sm:text-3xl leading-[1.1] text-brand-dark max-w-lg">
+            <h2 className="font-display text-2xl sm:text-3xl leading-[1.1] text-ink max-w-lg">
               Opening a trade account?
             </h2>
-            <p className="mt-3 text-black/55 text-[15px] leading-relaxed max-w-lg">
+            <p className="mt-3 text-ink/55 text-[15px] leading-relaxed max-w-lg">
               Complete the Customer Credit Application to set up a trade
               account with Consolidated Energy.
             </p>

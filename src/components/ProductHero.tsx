@@ -45,7 +45,7 @@ export default function ProductHero({
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-sm bg-brand-green px-6 py-3.5 text-[12px] font-bold uppercase tracking-wide text-brand-dark hover:bg-white transition-colors"
+              className="inline-flex items-center justify-center rounded-sm bg-brand-green px-6 py-3.5 text-[12px] font-bold uppercase tracking-wide text-ink hover:bg-surface transition-colors"
             >
               Send an Enquiry
             </Link>

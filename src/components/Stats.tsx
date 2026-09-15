@@ -28,13 +28,13 @@ export default function Stats() {
             key={stat.caption}
             delay={i * 100}
             className={`py-8 px-2 sm:px-6 lg:px-8 ${
-              i !== 0 ? "border-l border-black/10" : ""
+              i !== 0 ? "border-l border-ink/10" : ""
             }`}
           >
             <div className="font-display text-3xl sm:text-4xl text-white">
               {stat.value}
             </div>
-            <p className="mt-2 text-[11px] uppercase tracking-wide text-black/60 font-semibold leading-snug">
+            <p className="mt-2 text-[11px] uppercase tracking-wide text-ink/60 font-semibold leading-snug">
               {stat.caption}
             </p>
           </Reveal>

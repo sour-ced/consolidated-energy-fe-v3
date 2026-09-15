@@ -22,12 +22,12 @@ export default function CeilingsPage() {
         badge="WA only"
       />
 
-      <section className="bg-white py-20 lg:py-24">
+      <section className="bg-surface py-20 lg:py-24">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
           <p className="text-brand-green-dark text-[12px] font-bold uppercase tracking-[0.15em] mb-3">
             Service Areas
           </p>
-          <h2 className="font-display text-3xl sm:text-4xl leading-[1.1] text-brand-dark max-w-2xl">
+          <h2 className="font-display text-3xl sm:text-4xl leading-[1.1] text-ink max-w-2xl">
             Concept to completion, under one roof.
           </h2>
         </div>
@@ -51,13 +51,13 @@ export default function CeilingsPage() {
         ]}
       />
 
-      <section className="bg-white py-16 lg:py-20">
+      <section className="bg-surface py-16 lg:py-20">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
-          <div className="border border-black/10 p-7 max-w-md">
-            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-black/40 mb-2">
+          <div className="border border-ink/10 p-7 max-w-md">
+            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-ink/40 mb-2">
               Western Australia Office
             </p>
-            <p className="text-[14px] text-brand-dark">
+            <p className="text-[14px] text-ink">
               11 Cressall Road, Balcatta WA 6021
             </p>
             <a

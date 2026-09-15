@@ -46,7 +46,7 @@ export default function ProductImage({
         <span
           className={`absolute top-3 right-3 rounded-sm px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide ${
             tagAccent
-              ? "bg-brand-green text-brand-dark"
+              ? "bg-brand-green text-ink"
               : "bg-black/60 text-white backdrop-blur-sm"
           }`}
         >

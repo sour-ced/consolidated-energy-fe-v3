@@ -21,16 +21,16 @@ export default function AirConditioningPage() {
         variant="aircon"
       />
 
-      <section className="bg-white py-20 lg:py-24">
+      <section className="bg-surface py-20 lg:py-24">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
           <p className="text-brand-green-dark text-[12px] font-bold uppercase tracking-[0.15em] mb-3">
             All the best brands, under one roof
           </p>
-          <h2 className="font-display text-3xl sm:text-4xl leading-[1.1] text-brand-dark max-w-2xl mb-10">
+          <h2 className="font-display text-3xl sm:text-4xl leading-[1.1] text-ink max-w-2xl mb-10">
             Manufacturer-independent advice, so you get the system that
             actually suits your home.
           </h2>
-          <p className="text-black/60 text-[15px] leading-relaxed max-w-2xl">
+          <p className="text-ink/60 text-[15px] leading-relaxed max-w-2xl">
             Choosing a system with the right power output matters &ndash; an
             undersized unit struggles to keep up, while an oversized one
             costs more to run than it needs to. Every installation is backed

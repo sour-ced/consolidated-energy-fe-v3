@@ -57,9 +57,9 @@ export default function GasHotWaterPage() {
         variant="gas"
       />
 
-      <section className="bg-white py-20 lg:py-24">
+      <section className="bg-surface py-20 lg:py-24">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-12">
-          <div className="text-black/60 text-[15px] leading-relaxed flex flex-col gap-4">
+          <div className="text-ink/60 text-[15px] leading-relaxed flex flex-col gap-4">
             <p>
               Takagi systems heat water on demand only, eliminating the
               standing losses of a storage tank. Compact, tankless and
@@ -73,11 +73,11 @@ export default function GasHotWaterPage() {
               remote controls mean no more manual tap adjustment.
             </p>
           </div>
-          <div className="bg-brand-cream p-6 flex flex-col justify-center">
-            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-black/40 mb-2">
+          <div className="bg-section p-6 flex flex-col justify-center">
+            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-ink/40 mb-2">
               Selecting the right model
             </p>
-            <p className="text-[14px] text-brand-dark leading-relaxed">
+            <p className="text-[14px] text-ink leading-relaxed">
               Model choice comes down to household size, expected simultaneous
               hot water demand and local climate &ndash; speak to our team and
               we&apos;ll help you specify the right flow rate and fuel type
