@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 };
 
 const INSULATION_TYPES = [
-  { icon: "home" as const, label: "Ceiling Insulation", description: "Reduces heat loss and gain through the roof space." },
-  { icon: "wave" as const, label: "Acoustic Insulation", description: "Sound-dampening for walls, floors and ceilings." },
-  { icon: "wall" as const, label: "External Wall Insulation", description: "Improves thermal performance through the wall cavity." },
-  { icon: "layers" as const, label: "Wall Wraps", description: "Weather and vapour control layers behind the cladding." },
-  { icon: "shield" as const, label: "Roof Sarking", description: "Reflective and protective sarking under the roof covering." },
-  { icon: "cloud" as const, label: "Stone / Mineral Wool", description: "High-performance rigid insulation for demanding applications." },
+  { icon: "home" as const, label: "Ceiling Insulation", description: "Reduces heat loss and gain through the roof space.", href: "/ceiling-insulation" },
+  { icon: "wave" as const, label: "Acoustic Insulation", description: "Sound-dampening for walls, floors and ceilings.", href: "/acoustic-insulation" },
+  { icon: "wall" as const, label: "External Wall Insulation", description: "Improves thermal performance through the wall cavity.", href: "/external-wall-insulation" },
+  { icon: "layers" as const, label: "Wall Wraps", description: "Weather and vapour control layers behind the cladding.", href: "/wall-wraps" },
+  { icon: "shield" as const, label: "Roof Sarking", description: "Reflective and protective sarking under the roof covering.", href: "/roof-sarking" },
+  { icon: "cloud" as const, label: "Stone / Mineral Wool", description: "High-performance rigid insulation for demanding applications.", href: "/rockwool-insulation" },
 ];
 
 export default function InsulationPage() {

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Icon, { type IconName } from "./Icons";
 import Reveal from "./Reveal";
 
@@ -5,6 +6,7 @@ export type IconFeature = {
   icon: IconName;
   label: string;
   description?: string;
+  href?: string;
 };
 
 export default function IconFeatureGrid({
@@ -45,23 +47,37 @@ export default function IconFeatureGrid({
         )}
 
         <div className={`grid grid-cols-1 ${colsClass} gap-x-8 gap-y-10 ${!intro ? "mt-12" : ""}`}>
-          {items.map((item, i) => (
-            <Reveal key={item.label} delay={(i % 6) * 60} className="flex items-start gap-4">
-              <span className="shrink-0 inline-flex items-center justify-center w-11 h-11 rounded-full bg-section text-brand-green-dark">
-                <Icon name={item.icon} className="w-5 h-5" />
-              </span>
-              <div>
-                <p className="font-display text-[15px] tracking-wide text-ink leading-tight">
-                  {item.label}
-                </p>
-                {item.description && (
-                  <p className="mt-1.5 text-[13px] text-ink/55 leading-relaxed">
-                    {item.description}
+          {items.map((item, i) => {
+            const content = (
+              <>
+                <span className="shrink-0 inline-flex items-center justify-center w-11 h-11 rounded-full bg-section text-brand-green-dark group-hover:bg-brand-green group-hover:text-ink transition-colors">
+                  <Icon name={item.icon} className="w-5 h-5" />
+                </span>
+                <div>
+                  <p className="font-display text-[15px] tracking-wide text-ink leading-tight group-hover:text-brand-green-dark transition-colors">
+                    {item.label}
                   </p>
+                  {item.description && (
+                    <p className="mt-1.5 text-[13px] text-ink/55 leading-relaxed">
+                      {item.description}
+                    </p>
+                  )}
+                </div>
+              </>
+            );
+
+            return (
+              <Reveal key={item.label} delay={(i % 6) * 60} className="flex items-start gap-4">
+                {item.href ? (
+                  <Link href={item.href} className="contents group">
+                    {content}
+                  </Link>
+                ) : (
+                  content
                 )}
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>
