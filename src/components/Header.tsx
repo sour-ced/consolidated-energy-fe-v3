@@ -23,6 +23,7 @@ const NAV_LINKS = [
   { label: "Our Network", href: "/our-network" },
   { label: "Information Hub", href: "/information-hub" },
   { label: "Careers", href: "https://ambrosiumgroup.careers.hibob.com/jobs", target: "_blank" },
+  { label: "MySolar", href: "https://www.mysolar.com.au/", target: "_blank" },
   { label: "Contact", href: "/contact" },
 ];
 

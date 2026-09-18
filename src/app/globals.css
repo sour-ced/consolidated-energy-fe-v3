@@ -82,3 +82,50 @@ body {
     }
   }
 }
+
+/* Office map (Leaflet): dark base tiles, brand-green pins, restyle the
+   default popup/attribution chrome to match the site instead of Leaflet's
+   light-theme defaults. */
+.leaflet-container {
+  background: var(--color-brand-dark);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* OpenStreetMap's standard tiles are light by default; invert them to a
+   black base since Leaflet has no key-free dark tile source out of the box. */
+.map-tiles-dark {
+  filter: invert(1) hue-rotate(180deg) brightness(0.95) contrast(0.9) saturate(0.6);
+}
+
+.office-pin {
+  background: none;
+  border: none;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--color-brand-dark);
+  color: var(--color-brand-cream);
+  border-radius: 2px;
+}
+
+.leaflet-popup-content {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.leaflet-popup-tip {
+  background: var(--color-brand-dark);
+}
+
+.leaflet-popup-close-button {
+  color: var(--color-brand-cream) !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(11, 13, 11, 0.7) !important;
+  color: rgba(244, 242, 236, 0.6) !important;
+}
+
+.leaflet-control-attribution a {
+  color: rgba(244, 242, 236, 0.8) !important;
+}

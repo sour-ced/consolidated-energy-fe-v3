@@ -1,36 +1,5 @@
 import Reveal from "./Reveal";
-
-const OFFICES = [
-  {
-    state: "Victoria",
-    tag: "National Head Office",
-    city: "Melbourne",
-    address: ["102 Indian Drive", "Keysborough VIC 3173"],
-    phone: "(03) 9794 8250",
-    email: "vic@consolidatedenergy.com.au",
-  },
-  {
-    state: "Western Australia",
-    city: "Perth",
-    address: ["11 Cressall Rd", "Balcatta WA 6021"],
-    phone: "(08) 6270 6400",
-    email: "WA@consolidatedenergy.com.au",
-  },
-  {
-    state: "Queensland",
-    city: "Brisbane",
-    address: ["1/58 Meakin Road", "Meadowbrook QLD 4131"],
-    phone: "(07) 3271 4070",
-    email: "QLD@consolidatedenergy.com.au",
-  },
-  {
-    state: "Australian Capital Territory",
-    city: "Canberra",
-    address: ["Unit 1, 70 Sheppard Street", "Hume ACT 2620"],
-    phone: "(02) 6260 1455",
-    email: "ACT@consolidatedenergy.com.au",
-  },
-];
+import { OFFICES } from "@/lib/offices";
 
 export default function OfficeLocations() {
   return (
