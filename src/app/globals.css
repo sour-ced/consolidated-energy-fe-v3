@@ -90,7 +90,9 @@ body {
   background: var(--color-brand-dark);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
-
+.leaflet-bottom.leaflet-right {
+    display: none !important;
+}
 /* OpenStreetMap's standard tiles are light by default; invert them to a
    black base since Leaflet has no key-free dark tile source out of the box. */
 .map-tiles-dark {
