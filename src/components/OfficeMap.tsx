@@ -6,6 +6,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { OFFICES } from "@/lib/offices";
 import { useOfficeMap } from "./OfficeMapContext";
+import { useDarkMode } from "./useDarkMode";
 
 const pinIcon = L.divIcon({
   className: "office-pin",
@@ -45,12 +46,14 @@ function MapController({
 
 export default function OfficeMap() {
   const markers = useRef<Record<string, L.Marker | null>>({});
+  const isDark = useDarkMode();
+  const cartoStyle = isDark ? "light_all" : "dark_all";
 
   return (
     <MapContainer center={bounds.getCenter()} zoom={4} scrollWheelZoom={false} className="h-full w-full">
       {CARTO_KEY ? (
         <TileLayer
-          url={`https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}{r}.png?key=${CARTO_KEY}`}
+          url={`https://{s}.basemaps.cartocdn.com/rastertiles/${cartoStyle}/{z}/{x}/{y}{r}.png?key=${CARTO_KEY}`}
           subdomains="abcd"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
         />
