@@ -20,6 +20,8 @@ const pinIcon = L.divIcon({
 
 const bounds = L.latLngBounds(OFFICES.map((office) => office.position));
 
+const CARTO_KEY = process.env.NEXT_PUBLIC_CARTO_API_KEY;
+
 function MapController({
   markers,
 }: {
@@ -46,11 +48,19 @@ export default function OfficeMap() {
 
   return (
     <MapContainer center={bounds.getCenter()} zoom={4} scrollWheelZoom={false} className="h-full w-full">
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        className="map-tiles-dark"
-      />
+      {CARTO_KEY ? (
+        <TileLayer
+          url={`https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}{r}.png?key=${CARTO_KEY}`}
+          subdomains="abcd"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        />
+      ) : (
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          className="map-tiles-dark"
+        />
+      )}
       <MapController markers={markers} />
       {OFFICES.map((office) => (
         <Marker
