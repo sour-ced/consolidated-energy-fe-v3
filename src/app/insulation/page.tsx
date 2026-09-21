@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ProductHero from "@/components/ProductHero";
 import IconFeatureGrid from "@/components/IconFeatureGrid";
 import SubcategoryModules from "@/components/SubcategoryModules";
+import PhotoGallery from "@/components/PhotoGallery";
 import ProductRange from "@/components/ProductRange";
 import ContactSection from "@/components/ContactSection";
 
@@ -55,6 +56,28 @@ export default function InsulationPage() {
         eyebrow="Product Range"
         title="Insulation product categories"
         items={INSULATION_TYPES}
+      />
+
+      <PhotoGallery
+        eyebrow="National Network"
+        title="Warehousing and distribution, ready to supply"
+        intro="Stock is held and dispatched from warehouses across the country, backed by a fleet ready to get product to site."
+        columns={2}
+        photos={[
+          {
+            src: "/images/insulation/warehouse-distribution-truck.jpg",
+            alt: "Consolidated Energy delivery vehicle in front of stacked insulation bales",
+            wide: true,
+          },
+          {
+            src: "/images/insulation/warehouse-truck-acoustic.jpg",
+            alt: "Consolidated Energy delivery vehicle loaded with acoustic batts",
+          },
+          {
+            src: "/images/insulation/warehouse-truck-act-branch.jpg",
+            alt: "Consolidated Energy ACT branch delivery vehicle in the warehouse",
+          },
+        ]}
       />
 
       <SubcategoryModules

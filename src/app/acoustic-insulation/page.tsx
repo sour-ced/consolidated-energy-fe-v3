@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ProductHero from "@/components/ProductHero";
 import IconFeatureGrid from "@/components/IconFeatureGrid";
 import SubcategoryModules from "@/components/SubcategoryModules";
+import PhotoGallery from "@/components/PhotoGallery";
 import ProductRange from "@/components/ProductRange";
 import ContactSection from "@/components/ContactSection";
 
@@ -64,6 +65,37 @@ export default function AcousticInsulationPage() {
           },
         ]}
         columns={4}
+      />
+
+      <PhotoGallery
+        eyebrow="On the Job"
+        title="Acoustic batts in Australian homes"
+        photos={[
+          {
+            src: "/images/insulation/acoustic-install-ceiling.jpg",
+            alt: "Installer fitting acoustic batts into a ceiling frame",
+          },
+          {
+            src: "/images/insulation/acoustic-install-window-view.jpg",
+            alt: "Installer fitting acoustic batts near a window",
+          },
+          {
+            src: "/images/insulation/acoustic-install-between-windows.jpg",
+            alt: "Installer fitting acoustic batts between two windows",
+          },
+          {
+            src: "/images/insulation/acoustic-install-r27.jpg",
+            alt: "Installer fitting R2.7 acoustic batts overhead",
+          },
+          {
+            src: "/images/insulation/acoustic-batts-bag.jpg",
+            alt: "Consolidated Energy high density acoustic batts bag",
+          },
+          {
+            src: "/images/insulation/acoustic-batts-group.jpg",
+            alt: "A row of Consolidated Energy high density acoustic batts bags",
+          },
+        ]}
       />
 
       <SubcategoryModules

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ProductHero from "@/components/ProductHero";
 import IconFeatureGrid from "@/components/IconFeatureGrid";
 import SubcategoryModules from "@/components/SubcategoryModules";
+import PhotoGallery from "@/components/PhotoGallery";
 import ProductRange from "@/components/ProductRange";
 import ContactSection from "@/components/ContactSection";
 
@@ -72,6 +73,27 @@ export default function CeilingInsulationPage() {
             icon: "shield",
             label: "Non-Combustible",
             description: "Backed by a 70-year warranty, made from up to 65% recycled content.",
+          },
+        ]}
+      />
+
+      <PhotoGallery
+        eyebrow="On the Job"
+        title="Ceiling insulation in Australian homes"
+        columns={2}
+        photos={[
+          {
+            src: "/images/insulation/ceiling-install-roof-truss.jpg",
+            alt: "Installer fitting glasswool batts between roof trusses",
+            wide: true,
+          },
+          {
+            src: "/images/insulation/ceiling-insulation-bags-range.jpg",
+            alt: "Consolidated Energy ceiling insulation bags in R5.0, R4.1 and R3.0",
+          },
+          {
+            src: "/images/insulation/ceiling-insulation-bag.jpg",
+            alt: "Consolidated Energy ceiling insulation product bag",
           },
         ]}
       />

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ProductHero from "@/components/ProductHero";
 import IconFeatureGrid from "@/components/IconFeatureGrid";
 import SubcategoryModules from "@/components/SubcategoryModules";
@@ -23,18 +24,29 @@ export default function WallWrapsPage() {
       />
 
       <section className="bg-surface py-20 lg:py-24">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-12">
-          <p className="text-ink/60 text-[15px] leading-relaxed">
-            Wall wraps are flexible building membranes applied to the
-            exterior of the frame. They protect the frame, insulation and
-            structure during and after construction, and reduce air-flow
-            through the cavity to improve insulation efficiency.
-          </p>
-          <p className="text-ink/60 text-[15px] leading-relaxed">
-            The right wrap depends on climate and building design &ndash;
-            speak to our team about managing condensation risk for your
-            specific location and construction type.
-          </p>
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col gap-4">
+            <p className="text-ink/60 text-[15px] leading-relaxed">
+              Wall wraps are flexible building membranes applied to the
+              exterior of the frame. They protect the frame, insulation and
+              structure during and after construction, and reduce air-flow
+              through the cavity to improve insulation efficiency.
+            </p>
+            <p className="text-ink/60 text-[15px] leading-relaxed">
+              The right wrap depends on climate and building design &ndash;
+              speak to our team about managing condensation risk for your
+              specific location and construction type.
+            </p>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200">
+            <Image
+              src="/images/insulation/wall-wrap-product.jpg"
+              alt="Consolidated Energy TradeSelect wall wrap fitted to a building frame"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 

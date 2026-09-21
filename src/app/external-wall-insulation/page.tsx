@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ProductHero from "@/components/ProductHero";
 import IconFeatureGrid from "@/components/IconFeatureGrid";
 import SubcategoryModules from "@/components/SubcategoryModules";
@@ -23,18 +24,29 @@ export default function ExternalWallInsulationPage() {
       />
 
       <section className="bg-surface py-20 lg:py-24">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-12">
-          <p className="text-ink/60 text-[15px] leading-relaxed">
-            Walls are an open gate to the outside world, letting heat and
-            noise travel through them with ease. Insulating the wall cavity
-            improves comfort and reduces energy costs across the year.
-          </p>
-          <p className="text-ink/60 text-[15px] leading-relaxed">
-            We supply Fletcher Insulation products, a leading Australian
-            manufacturer focused on innovation in building construction
-            insulation and sustainable solutions, alongside stone and
-            mineral wool options.
-          </p>
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col gap-4">
+            <p className="text-ink/60 text-[15px] leading-relaxed">
+              Walls are an open gate to the outside world, letting heat and
+              noise travel through them with ease. Insulating the wall cavity
+              improves comfort and reduces energy costs across the year.
+            </p>
+            <p className="text-ink/60 text-[15px] leading-relaxed">
+              We supply Fletcher Insulation products, a leading Australian
+              manufacturer focused on innovation in building construction
+              insulation and sustainable solutions, alongside stone and
+              mineral wool options.
+            </p>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200">
+            <Image
+              src="/images/insulation/wall-insulation-install.jpg"
+              alt="Installer fitting glasswool batts between external wall studs"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
