@@ -62,12 +62,10 @@ export default function InsulationPage() {
         eyebrow="National Network"
         title="Warehousing and distribution, ready to supply"
         intro="Stock is held and dispatched from warehouses across the country, backed by a fleet ready to get product to site."
-        columns={2}
         photos={[
           {
             src: "/images/insulation/warehouse-distribution-truck.jpg",
             alt: "Consolidated Energy delivery vehicle in front of stacked insulation bales",
-            wide: true,
           },
           {
             src: "/images/insulation/warehouse-truck-acoustic.jpg",
