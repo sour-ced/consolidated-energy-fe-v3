@@ -34,7 +34,7 @@ export default function CategoryLinkCards({
             <Reveal key={item.href} delay={(i % 3) * 100} className="h-full">
               <Link
                 href={item.href}
-                className="group bg-surface border border-ink/5 flex flex-col h-full hover:shadow-lg transition-shadow"
+                className="group bg-surface border border-ink/5 flex flex-col h-full hover:border-brand-green/50 hover:shadow-lg transition-[box-shadow,border-color]"
               >
                 <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-200">
                   <Image
@@ -46,7 +46,7 @@ export default function CategoryLinkCards({
                   />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="font-display text-lg text-ink">
+                  <h3 className="font-display text-lg text-ink group-hover:text-brand-green-dark transition-colors">
                     {item.title}
                   </h3>
                   {item.description && (
