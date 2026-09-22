@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ProductHero from "@/components/ProductHero";
-import IconFeatureGrid from "@/components/IconFeatureGrid";
+import CategoryLinkCards from "@/components/CategoryLinkCards";
 import SubcategoryModules from "@/components/SubcategoryModules";
 import PhotoGallery from "@/components/PhotoGallery";
 import ProductRange from "@/components/ProductRange";
@@ -13,12 +13,48 @@ export const metadata: Metadata = {
 };
 
 const INSULATION_TYPES = [
-  { icon: "home" as const, label: "Ceiling Insulation", description: "Reduces heat loss and gain through the roof space.", href: "/ceiling-insulation" },
-  { icon: "wave" as const, label: "Acoustic Insulation", description: "Sound-dampening for walls, floors and ceilings.", href: "/acoustic-insulation" },
-  { icon: "wall" as const, label: "External Wall Insulation", description: "Improves thermal performance through the wall cavity.", href: "/external-wall-insulation" },
-  { icon: "layers" as const, label: "Wall Wraps", description: "Weather and vapour control layers behind the cladding.", href: "/wall-wraps" },
-  { icon: "shield" as const, label: "Roof Sarking", description: "Reflective and protective sarking under the roof covering.", href: "/roof-sarking" },
-  { icon: "cloud" as const, label: "Stone / Mineral Wool", description: "High-performance rigid insulation for demanding applications.", href: "/rockwool-insulation" },
+  {
+    src: "/images/insulation/category-ceiling.jpg",
+    alt: "Ceiling insulation rolls",
+    title: "Ceiling Insulation",
+    description: "Reduces heat loss and gain through the roof space.",
+    href: "/ceiling-insulation",
+  },
+  {
+    src: "/images/insulation/category-acoustic.jpg",
+    alt: "Acoustic ceiling panels",
+    title: "Acoustic Insulation",
+    description: "Sound-dampening for walls, floors and ceilings.",
+    href: "/acoustic-insulation",
+  },
+  {
+    src: "/images/insulation/category-wall.jpg",
+    alt: "Wall insulation batts",
+    title: "External Wall Insulation",
+    description: "Improves thermal performance through the wall cavity.",
+    href: "/external-wall-insulation",
+  },
+  {
+    src: "/images/insulation/category-sarking.jpg",
+    alt: "Roof sarking under construction",
+    title: "Roof Sarking",
+    description: "Reflective and protective sarking under the roof covering.",
+    href: "/roof-sarking",
+  },
+  {
+    src: "/images/insulation/category-wrap.jpg",
+    alt: "Wall wrap being installed",
+    title: "Wall Wraps",
+    description: "Weather and vapour control layers behind the cladding.",
+    href: "/wall-wraps",
+  },
+  {
+    src: "/images/insulation/category-rockwool.jpg",
+    alt: "Stone and mineral wool insulation batts",
+    title: "Stone / Mineral Wool",
+    description: "High-performance rigid insulation for demanding applications.",
+    href: "/rockwool-insulation",
+  },
 ];
 
 export default function InsulationPage() {
@@ -52,7 +88,7 @@ export default function InsulationPage() {
         </div>
       </section>
 
-      <IconFeatureGrid
+      <CategoryLinkCards
         eyebrow="Product Range"
         title="Insulation product categories"
         items={INSULATION_TYPES}
