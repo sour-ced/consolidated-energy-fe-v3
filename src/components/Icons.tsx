@@ -27,7 +27,10 @@ export type IconName =
   | "wind"
   | "clipboard"
   | "home"
-  | "moon";
+  | "moon"
+  | "chat"
+  | "send"
+  | "close";
 
 const paths: Record<IconName, React.ReactNode> = {
   star: (
@@ -169,6 +172,15 @@ const paths: Record<IconName, React.ReactNode> = {
   ),
   moon: (
     <path d="M20 14.5A8.5 8.5 0 119.5 4 6.8 6.8 0 0020 14.5z" strokeLinejoin="round" />
+  ),
+  chat: (
+    <path d="M4 5h16v11H9l-4 4v-4H4V5z" strokeLinecap="round" strokeLinejoin="round" />
+  ),
+  send: (
+    <path d="M21 3L3 10.5l7.5 2.5M21 3l-7.5 18-2.5-8M21 3L10.5 13" strokeLinecap="round" strokeLinejoin="round" />
+  ),
+  close: (
+    <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
   ),
 };
 
