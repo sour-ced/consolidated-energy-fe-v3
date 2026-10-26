@@ -7,11 +7,20 @@ import Logo from "./Logo";
 import ThemeToggle from "./ThemeToggle";
 import { useDarkMode } from "./useDarkMode";
 
-const PRODUCT_LINKS = [
+type ProductLink = { label: string; href: string; children?: ProductLink[] };
+
+const PRODUCT_LINKS: ProductLink[] = [
   { label: "Full Product Range", href: "/products" },
-  { label: "Air Conditioning", href: "/air-conditioning" },
+  {
+    label: "Air Conditioning",
+    href: "/air-conditioning",
+    children: [
+      { label: "Ducted Air Conditioning", href: "/ducted-air-conditioning" },
+      { label: "Split & Multi-Split Systems", href: "/split-systems" },
+    ],
+  },
   { label: "Continuous Gas Hot Water", href: "/gas-hot-water" },
-  { label: "Heat Pumps", href: "/heat-pumps" },
+  { label: "Heat Pump Hot Water", href: "/heat-pumps" },
   { label: "Insulation", href: "/insulation" },
   { label: "Ceilings", href: "/ceilings" },
   { label: "Solar Power", href: "/solar-power" },
@@ -22,16 +31,29 @@ const NAV_LINKS = [
   { label: "Products & Services", href: "/products", dropdown: PRODUCT_LINKS },
   { label: "Our Network", href: "/our-network" },
   { label: "Information Hub", href: "/information-hub" },
-  { label: "Careers", href: "https://ambrosiumgroup.careers.hibob.com/jobs", target: "_blank" },
+  { label: "Careers", href: "/careers" },
   { label: "MySolar", href: "https://www.mysolar.com.au/", target: "_blank" },
   { label: "Contact", href: "/contact" },
 ];
 
-const PRODUCT_PATHS = PRODUCT_LINKS.map((l) => l.href);
+const PRODUCT_PATHS = PRODUCT_LINKS.flatMap((l) => [
+  l.href,
+  ...(l.children ?? []).map((c) => c.href),
+]);
+
+function Chevron({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 12 8" className={className} fill="none" stroke="currentColor" strokeWidth="1.6">
+      <path d="M1 1.5L6 6.5L11 1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [subOpen, setSubOpen] = useState<string | null>(null);
+  const [mobileSubOpen, setMobileSubOpen] = useState<string | null>(null);
   const pathname = usePathname();
   const isDark = useDarkMode();
 
@@ -81,17 +103,62 @@ export default function Header() {
                   </svg>
                 </Link>
 
-                <div className="invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-150 absolute left-1/2 -translate-x-1/2 top-full pt-3 z-50">
+                <div className="invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 transition-all duration-150 absolute left-1/2 -translate-x-1/2 top-full pt-3 z-50">
                   <div className="w-64 bg-surface border border-ink/10 shadow-xl py-2">
-                    {link.dropdown.map((item) => (
-                      <Link
-                        key={item.label}
-                        href={item.href}
-                        className="block px-5 py-2.5 text-[13px] text-ink/75 hover:text-ink hover:bg-section transition-colors"
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
+                    {link.dropdown.map((item) =>
+                      item.children ? (
+                        <div
+                          key={item.label}
+                          className="group/sub relative"
+                          onMouseLeave={() => setSubOpen(null)}
+                        >
+                          <div className="flex items-stretch text-ink/75 hover:text-ink hover:bg-section transition-colors">
+                            <Link href={item.href} className="flex-1 px-5 py-2.5 text-[13px]">
+                              {item.label}
+                            </Link>
+                            <button
+                              type="button"
+                              aria-label={`Show ${item.label} systems`}
+                              aria-expanded={subOpen === item.label}
+                              onClick={() =>
+                                setSubOpen((v) => (v === item.label ? null : item.label))
+                              }
+                              className="px-4 text-ink/50 hover:text-ink"
+                            >
+                              <Chevron className="w-2.5 h-2.5 -rotate-90" />
+                            </button>
+                          </div>
+
+                          <div
+                            className={`absolute left-full -top-[9px] pl-1 transition-all duration-150 group-hover/sub:visible group-hover/sub:opacity-100 group-hover/sub:translate-x-0 group-focus-within/sub:visible group-focus-within/sub:opacity-100 group-focus-within/sub:translate-x-0 ${
+                              subOpen === item.label
+                                ? "visible opacity-100 translate-x-0"
+                                : "invisible opacity-0 -translate-x-1"
+                            }`}
+                          >
+                            <div className="w-64 bg-surface border border-ink/10 shadow-xl py-2">
+                              {item.children.map((child) => (
+                                <Link
+                                  key={child.label}
+                                  href={child.href}
+                                  className="block px-5 py-2.5 text-[13px] text-ink/75 hover:text-ink hover:bg-section transition-colors"
+                                >
+                                  {child.label}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <Link
+                          key={item.label}
+                          href={item.href}
+                          className="block px-5 py-2.5 text-[13px] text-ink/75 hover:text-ink hover:bg-section transition-colors"
+                        >
+                          {item.label}
+                        </Link>
+                      )
+                    )}
                   </div>
                 </div>
               </div>
@@ -192,16 +259,63 @@ export default function Header() {
                     }`}
                   >
                     <div className="overflow-hidden flex flex-col pl-4 border-l border-ink/10 ml-1">
-                      {link.dropdown.map((item) => (
-                        <Link
-                          key={item.label}
-                          href={item.href}
-                          onClick={() => setOpen(false)}
-                          className="py-2 text-[13px] text-ink/60"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
+                      {link.dropdown.map((item) =>
+                        item.children ? (
+                          <div key={item.label} className="flex flex-col">
+                            <div className="flex items-center justify-between">
+                              <Link
+                                href={item.href}
+                                onClick={() => setOpen(false)}
+                                className="py-2 text-[13px] text-ink/60"
+                              >
+                                {item.label}
+                              </Link>
+                              <button
+                                type="button"
+                                aria-label={`Toggle ${item.label} submenu`}
+                                aria-expanded={mobileSubOpen === item.label}
+                                onClick={() =>
+                                  setMobileSubOpen((v) => (v === item.label ? null : item.label))
+                                }
+                                className="p-1 text-ink/50"
+                              >
+                                <Chevron
+                                  className={`w-3 h-3 transition-transform ${
+                                    mobileSubOpen === item.label ? "rotate-180" : ""
+                                  }`}
+                                />
+                              </button>
+                            </div>
+                            <div
+                              className={`grid overflow-hidden transition-[grid-template-rows] duration-200 ${
+                                mobileSubOpen === item.label ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                              }`}
+                            >
+                              <div className="overflow-hidden flex flex-col pl-4 border-l border-ink/10 ml-1">
+                                {item.children.map((child) => (
+                                  <Link
+                                    key={child.label}
+                                    href={child.href}
+                                    onClick={() => setOpen(false)}
+                                    className="py-1.5 text-[12px] text-ink/50"
+                                  >
+                                    {child.label}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        ) : (
+                          <Link
+                            key={item.label}
+                            href={item.href}
+                            onClick={() => setOpen(false)}
+                            className="py-2 text-[13px] text-ink/60"
+                          >
+                            {item.label}
+                          </Link>
+                        )
+                      )}
                     </div>
                   </div>
                 </div>

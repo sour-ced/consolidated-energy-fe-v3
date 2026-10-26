@@ -13,10 +13,12 @@ export type CategoryLinkItem = {
 export default function CategoryLinkCards({
   eyebrow,
   title,
+  intro,
   items,
 }: {
   eyebrow: string;
   title: string;
+  intro?: string;
   items: CategoryLinkItem[];
 }) {
   return (
@@ -25,9 +27,14 @@ export default function CategoryLinkCards({
         <p className="text-brand-green-dark text-[12px] font-bold uppercase tracking-[0.15em] mb-3">
           {eyebrow}
         </p>
-        <h2 className="font-display text-3xl sm:text-4xl leading-[1.1] text-ink max-w-xl mb-12">
+        <h2 className={`font-display text-3xl sm:text-4xl leading-[1.1] text-ink max-w-xl ${intro ? "mb-4" : "mb-12"}`}>
           {title}
         </h2>
+        {intro && (
+          <p className="text-ink/55 text-[15px] leading-relaxed max-w-2xl mb-12">
+            {intro}
+          </p>
+        )}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((item, i) => (

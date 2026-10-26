@@ -325,7 +325,6 @@ const CATEGORIES: {
     productHref: "/solar-power",
     docs: [
       { label: "Solar panel & inverter spec sheet", type: "Spec Sheet", href: "#" },
-      { label: "Battery storage spec sheet", type: "Spec Sheet", href: "#" },
       { label: "Solar power warranty terms", type: "Warranty", href: "#" },
     ],
   },

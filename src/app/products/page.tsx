@@ -5,7 +5,7 @@ import ContactSection from "@/components/ContactSection";
 export const metadata: Metadata = {
   title: "Products & Services | Consolidated Energy",
   description:
-    "Consolidated Energy's full product range: insulation, heat pumps, continuous gas hot water, air conditioning, solar power and ceilings, supplied and installed by one account.",
+    "Consolidated Energy's full product range: insulation, heat pump hot water, continuous gas hot water, air conditioning, solar power and ceilings, supplied and installed by one account.",
 };
 
 export default function ProductsPage() {
@@ -18,12 +18,13 @@ export default function ProductsPage() {
             Products &amp; Services
           </div>
           <h1 className="font-display text-[34px] sm:text-[42px] lg:text-[48px] leading-[1.1] tracking-tight max-w-3xl">
-            We are Australia&apos;s leading provider of residential &amp;
-            commercial building home energy products.
+            Complete solutions for residential and commercial construction
           </h1>
           <p className="mt-6 text-white/60 text-[15px] leading-relaxed max-w-xl">
-            Speak to one of our home energy specialists and they will be able
-            to advise you on the best solution for your needs.
+            From insulation and air conditioning to hot water and solar,
+            Consolidated Energy provides a broad range of products and
+            installation services backed by specialist knowledge and national
+            capability.
           </p>
         </div>
       </section>

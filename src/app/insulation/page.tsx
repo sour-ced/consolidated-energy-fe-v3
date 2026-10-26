@@ -1,58 +1,58 @@
 import type { Metadata } from "next";
 import ProductHero from "@/components/ProductHero";
-import CategoryLinkCards from "@/components/CategoryLinkCards";
-import SubcategoryModules from "@/components/SubcategoryModules";
 import PhotoGallery from "@/components/PhotoGallery";
 import ProductRange from "@/components/ProductRange";
 import ContactSection from "@/components/ContactSection";
+import CategoryLinkCards, {
+  type CategoryLinkItem,
+} from "@/components/CategoryLinkCards";
 
 export const metadata: Metadata = {
   title: "Insulation | Consolidated Energy",
   description:
-    "Consolidated Energy is the largest independent distributor of insulation in Australia, supplying and installing insulation across the residential, commercial, HVAC and industrial markets.",
+    "Consolidated Energy is one of Australia's largest independent distributors of insulation, with a national distribution network supporting residential, commercial, HVAC and industrial projects across Australia.",
 };
 
-const INSULATION_TYPES = [
+const INSULATION_TYPES: CategoryLinkItem[] = [
   {
     src: "/images/insulation/category-ceiling.jpg",
     alt: "Ceiling insulation rolls",
     title: "Ceiling Insulation",
-    description: "Reduces heat loss and gain through the roof space.",
+    description: "Improve year-round comfort and energy efficiency",
     href: "/ceiling-insulation",
   },
   {
     src: "/images/insulation/category-acoustic.jpg",
     alt: "Acoustic ceiling panels",
     title: "Acoustic Insulation",
-    description: "Sound-dampening for walls, floors and ceilings.",
+    description: "Reduce unwanted noise for quieter, more comfortable spaces",
     href: "/acoustic-insulation",
   },
   {
     src: "/images/insulation/category-wall.jpg",
     alt: "Wall insulation batts",
     title: "External Wall Insulation",
-    description: "Improves thermal performance through the wall cavity.",
+    description: "Improve comfort and efficiency from the outside in",
     href: "/external-wall-insulation",
   },
   {
     src: "/images/insulation/category-sarking.jpg",
     alt: "Roof sarking under construction",
     title: "Roof Sarking",
-    description: "Reflective and protective sarking under the roof covering.",
+    description: "A protective second skin for your roof",
     href: "/roof-sarking",
   },
   {
     src: "/images/insulation/category-wrap.jpg",
     alt: "Wall wrap being installed",
     title: "Wall Wraps",
-    description: "Weather and vapour control layers behind the cladding.",
+    description: "Protect the frame, manage condensation and improve comfort",
     href: "/wall-wraps",
   },
   {
     src: "/images/insulation/category-rockwool.jpg",
     alt: "Stone and mineral wool insulation batts",
     title: "Stone / Mineral Wool",
-    description: "High-performance rigid insulation for demanding applications.",
     href: "/rockwool-insulation",
   },
 ];
@@ -63,36 +63,44 @@ export default function InsulationPage() {
       <ProductHero
         eyebrow="Product Range"
         title="Insulation"
-        tagline="Improved comfort all year round"
-        description="Insulation is the key to true comfort and lower household running costs. Consolidated Energy is the largest independent distributor of insulation in Australia, and the only private insulation company with a national distribution network across Australia's major capitals."
+        tagline="Comfort starts with the right insulation"
+        description="The right insulation plays an important role in creating more comfortable, energy-efficient homes and buildings while helping to reduce ongoing heating and cooling costs."
         variant="insulation"
       />
 
       <section className="bg-surface py-20 lg:py-24">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-12">
-          <p className="text-ink/60 text-[15px] leading-relaxed">
-            Because we&apos;re not tied to one manufacturer, our
-            recommendations are based on product merits &ndash; regardless of
-            brand. We work closely with Australia&apos;s leading
-            manufacturers to secure competitive pricing through our buying
-            power, and we supply and install insulation across the
-            residential builder market, the commercial sector, the HVAC
-            industry and industrial applications.
+          <p className="font-display text-xl sm:text-2xl leading-snug text-ink">
+            Consolidated Energy is one of Australia&apos;s largest independent
+            distributors of insulation, with a national distribution network
+            supporting residential, commercial, HVAC and industrial projects
+            across Australia.
           </p>
-          <p className="text-ink/60 text-[15px] leading-relaxed">
-            Our product range spans glasswool, polyester, reflective
-            insulation and high-performance rigid options, so whatever the
-            application, we can specify and deliver the right solution
-            supplied and installed by one account.
-          </p>
+          <div className="flex flex-col gap-5">
+            <p className="text-ink/60 text-[15px] leading-relaxed">
+              Our independence means we&apos;re not tied to any one
+              manufacturer. Instead, we can recommend insulation solutions
+              based on the requirements of each project, drawing from an
+              extensive range of quality products from leading Australian and
+              international manufacturers.
+            </p>
+            <p className="text-ink/60 text-[15px] leading-relaxed">
+              We supply and install insulation for residential builders and
+              provide a comprehensive range of glasswool, polyester,
+              reflective and high-performance rigid insulation for commercial,
+              HVAC and industrial applications.
+            </p>
+            <p className="text-ink/60 text-[15px] leading-relaxed">
+              With extensive experience across the Australian construction
+              industry, we understand the importance of quality installation,
+              reliable supply and keeping projects moving. Our national reach,
+              strong manufacturer relationships and buying power enable us to
+              provide competitive solutions backed by dependable service from
+              specification and supply through to installation.
+            </p>
+          </div>
         </div>
       </section>
-
-      <CategoryLinkCards
-        eyebrow="Product Range"
-        title="Insulation product categories"
-        items={INSULATION_TYPES}
-      />
 
       <PhotoGallery
         eyebrow="National Network"
@@ -114,26 +122,11 @@ export default function InsulationPage() {
         ]}
       />
 
-      <SubcategoryModules
-        eyebrow="Applications"
-        title="Specified by application"
-        items={[
-          {
-            icon: "home",
-            title: "Thermal Insulation",
-            description: "Ceiling, wall and roof insulation for year-round comfort.",
-          },
-          {
-            icon: "wave",
-            title: "Acoustic Insulation",
-            description: "Sound-dampening solutions for walls, floors and ceilings.",
-          },
-          {
-            icon: "cloud",
-            title: "Specialty Systems",
-            description: "Wall wraps and stone or mineral wool for high-performance builds.",
-          },
-        ]}
+      <CategoryLinkCards
+        eyebrow="Product Range"
+        title="Our Insulation Range"
+        intro="Whatever the application, Consolidated Energy can help identify and deliver the right insulation solution, supported by quality products, experienced installation teams and reliable service."
+        items={INSULATION_TYPES}
       />
 
       <ProductRange exclude="insulation" />

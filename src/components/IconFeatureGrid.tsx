@@ -50,7 +50,7 @@ export default function IconFeatureGrid({
           {items.map((item, i) => {
             const content = (
               <>
-                <span className="shrink-0 inline-flex items-center justify-center w-11 h-11 rounded-full bg-section text-brand-green-dark group-hover:bg-brand-green group-hover:text-ink transition-colors">
+                <span className="shrink-0 inline-flex items-center justify-center w-11 h-11 rounded-full bg-section text-brand-green-dark group-hover:bg-brand-green group-hover:text-brand-dark transition-colors">
                   <Icon name={item.icon} className="w-5 h-5" />
                 </span>
                 <div>

@@ -3,13 +3,14 @@ import Image from "next/image";
 import ProductHero from "@/components/ProductHero";
 import IconFeatureGrid from "@/components/IconFeatureGrid";
 import SubcategoryModules from "@/components/SubcategoryModules";
+import AdviceCallout from "@/components/AdviceCallout";
 import ProductRange from "@/components/ProductRange";
 import ContactSection from "@/components/ContactSection";
 
 export const metadata: Metadata = {
   title: "Wall Wraps | Consolidated Energy",
   description:
-    "Wall wrap products from Consolidated Energy protect the building frame, manage condensation and improve insulation performance.",
+    "Wall wraps are pliable building membranes installed to the outside of the building frame, providing an additional layer of protection during construction and once the home is complete.",
 };
 
 export default function WallWrapsPage() {
@@ -18,8 +19,8 @@ export default function WallWrapsPage() {
       <ProductHero
         eyebrow="Insulation"
         title="Wall Wraps"
-        tagline="Protect the frame, manage condensation, improve comfort"
-        description="Our wall wrap range makes homes more comfortable to live in and reduces the risk of condensation forming, which can lead to mould."
+        tagline="Protect the frame, manage condensation and improve comfort"
+        description="Wall wraps are pliable building membranes installed to the outside of the building frame, providing an additional layer of protection during construction and once the home is complete."
         variant="insulation"
       />
 
@@ -27,21 +28,23 @@ export default function WallWrapsPage() {
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col gap-4">
             <p className="text-ink/60 text-[15px] leading-relaxed">
-              Wall wraps are flexible building membranes applied to the
-              exterior of the frame. They protect the frame, insulation and
-              structure during and after construction, and reduce air-flow
-              through the cavity to improve insulation efficiency.
+              By helping protect the frame, insulation and building structure
+              from wind-driven rain and dust, wall wraps can contribute to a
+              more comfortable and energy-efficient home. They can also reduce
+              air movement through the building cavity, helping insulation
+              perform more effectively.
             </p>
             <p className="text-ink/60 text-[15px] leading-relaxed">
-              The right wrap depends on climate and building design &ndash;
-              speak to our team about managing condensation risk for your
-              specific location and construction type.
+              Choosing the right wall wrap is important. Permeable and
+              non-permeable membranes manage moisture differently, so the
+              appropriate solution should consider the local climate, building
+              design and condensation risk.
             </p>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200">
+          <div className="relative aspect-[4/3] overflow-hidden bg-section">
             <Image
               src="/images/insulation/wall-wrap-product.jpg"
-              alt="Consolidated Energy TradeSelect wall wrap fitted to a building frame"
+              alt="Wall wrap fitted to a timber building frame"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -52,77 +55,119 @@ export default function WallWrapsPage() {
 
       <IconFeatureGrid
         eyebrow="Why It Matters"
-        title="Wall wrap benefits"
+        title="Wall Wrap Benefits"
         items={[
           {
             icon: "shield",
-            label: "Protects the Frame",
-            description: "Safeguards the frame, insulation and structure during and after construction.",
+            label: "Protects the Building",
+            description:
+              "Helps protect the frame, insulation and building structure from wind-driven rain and dust.",
           },
           {
             icon: "wind",
-            label: "Reduces Air-Flow",
-            description: "Cuts air-flow through cavities to improve insulation efficiency.",
+            label: "Improves Insulation Performance",
+            description:
+              "Reduces air movement through the building cavity, helping insulation work more effectively.",
+          },
+          {
+            icon: "bolt",
+            label: "Supports Energy Efficiency",
+            description:
+              "Improved building envelope performance can help reduce heating and cooling requirements.",
           },
           {
             icon: "droplet",
             label: "Manages Condensation",
-            description: "Selected to suit your climate and reduce condensation risk.",
+            description:
+              "The right membrane can help manage moisture and reduce the risk of condensation within the building structure.",
           },
           {
-            icon: "shieldCheck",
-            label: "Reduces Mould Risk",
-            description: "Helps prevent the build-up of moisture that can lead to mould.",
+            icon: "home",
+            label: "Improves Indoor Comfort",
+            description:
+              "Helps create a better-performing building envelope for a more comfortable indoor environment.",
           },
         ]}
-        columns={4}
       />
 
       <SubcategoryModules
         eyebrow="Product Range"
-        title="Wall wrap products"
+        title="Wall Wrap Products"
+        columns={2}
         items={[
           {
             icon: "droplet",
-            title: "Bradford Thermoseal",
-            description: "Non-permeable vapour barrier suited to warmer climates.",
+            title: "Bradford Thermoseal Wall Wrap",
+            description: [
+              "Bradford Thermoseal is a non-permeable reflective wall wrap designed to act as a vapour barrier and reduce the transmission of moisture through the building structure.",
+              "When installed adjacent to an appropriate air cavity, its reflective surface can also contribute to the thermal performance of the wall system. Thermoseal is suited to applications where a non-permeable membrane is appropriate for the climate and building design.",
+            ],
+            specsLabel: "Key features include:",
             specs: [
-              "Contributes reflective air-gap R-Value",
-              "Reduces moisture transmission",
-              "Reduces drafts",
+              "Acts as a non-permeable vapour barrier",
+              "Helps reduce water vapour transmission",
+              "Can contribute a reflective air-gap R-value",
+              "Reduces draughts to help insulation perform more effectively",
+              "Helps protect the building frame from wind-driven rain and dust",
             ],
           },
           {
             icon: "wind",
             title: "Enviroseal ProctorWrap",
-            description: "Vapour-permeable wrap suited to colder climates.",
+            description: [
+              "Enviroseal ProctorWrap is a vapour-permeable wall wrap that allows water vapour to pass through the membrane while helping prevent liquid water and dust from entering from outside.",
+              "Its vapour-permeable construction can assist with condensation management by allowing moisture within the building envelope to escape, making it particularly suited to applications where moisture management is important.",
+            ],
+            specsLabel: "Key features include:",
             specs: [
-              "Allows moisture vapour to pass through",
-              "Blocks liquid water and dust",
+              "Vapour-permeable construction",
+              "Allows water vapour to pass through the membrane",
+              "Helps prevent the entry of liquid water and dust",
+              "Assists with condensation management",
+              "Reduces draughts to help insulation perform more effectively",
+              "Helps protect the building frame from wind-driven rain",
             ],
           },
           {
             icon: "shield",
-            title: "Ametalin SilverWrap",
-            description: "Medium vapour barrier with 97% reflectivity.",
+            title: "Ametalin SilverWrap™",
+            description:
+              "Ametalin SilverWrap™ is a reflective wall wrap designed for residential and commercial construction, combining moisture and weather protection with reflective thermal performance.",
+            specsLabel: "Key features include:",
             specs: [
-              "97% reflectivity",
-              "Suits residential and commercial buildings",
-              "Bushfire resistant",
+              "Medium vapour barrier and high water barrier",
+              "Suitable for a range of residential and commercial wall systems",
+              "Highly reflective surface contributes to thermal performance",
+              "Durable and tear-resistant",
+              "Helps protect against wind, rain and dust",
+              "Lightweight and high strength",
+              "Suitable for use in bushfire-prone areas when installed in accordance with applicable requirements",
             ],
           },
           {
             icon: "layers",
-            title: "Ametalin SilverSark",
-            description: "Double-sided reflective foil for roofs and walls.",
+            title: "Ametalin SilverSark®",
+            description: [
+              "Ametalin SilverSark® is an extra heavy-duty, double-sided reflective foil insulation and radiant barrier suitable for roof and wall applications.",
+              "Its double-sided reflective construction can contribute to the overall thermal performance of the building system while also providing condensation and moisture management benefits.",
+            ],
+            specsLabel: "Key features include:",
             specs: [
-              "Increases system R-Value",
-              "Multi-purpose roof and wall use",
-              "Bushfire suitable",
+              "Double-sided reflective foil construction",
+              "Can contribute to increased system R-value",
+              "Suitable for a range of roof and wall applications",
+              "Provides condensation and moisture control",
+              "High strength, lightweight and flexible",
+              "Anti-glare coating on one side for easier installation",
+              "Suitable for use in bushfire-prone areas when installed in accordance with applicable requirements",
             ],
           },
         ]}
       />
+
+      <AdviceCallout>
+        {"For advice on selecting the right wall wrap for your climate, building design and application, contact the Consolidated Energy team."}
+      </AdviceCallout>
 
       <ProductRange exclude="insulation" />
       <ContactSection />

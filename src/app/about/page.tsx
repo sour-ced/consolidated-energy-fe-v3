@@ -50,8 +50,8 @@ export default function AboutPage() {
               installation services cover all types of insulation products,
               hot water solutions to cover all market conditions including
               solar and heat pump, leading brand air conditioning products
-              both ducted and split systems, solar power systems for new and
-              existing homes along with battery storage solutions.
+              both ducted and split systems, and solar power systems for new
+              and existing homes.
             </p>
             <p>
               Our business works closely with many of Australia&apos;s

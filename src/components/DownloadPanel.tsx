@@ -44,7 +44,7 @@ export default function DownloadPanel({
                 rel="noopener noreferrer"
                 className="group flex items-center gap-4 bg-surface border border-ink/10 px-5 py-4 hover:border-brand-green-dark transition-colors"
               >
-                <span className="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-section text-brand-green-dark group-hover:bg-brand-green group-hover:text-ink transition-colors">
+                <span className="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-section text-brand-green-dark group-hover:bg-brand-green group-hover:text-brand-dark transition-colors">
                   <Icon name="clipboard" className="w-5 h-5" />
                 </span>
                 <span className="flex-1 text-[14px] font-medium text-ink leading-snug">

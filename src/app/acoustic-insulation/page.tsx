@@ -3,13 +3,14 @@ import ProductHero from "@/components/ProductHero";
 import IconFeatureGrid from "@/components/IconFeatureGrid";
 import SubcategoryModules from "@/components/SubcategoryModules";
 import PhotoGallery from "@/components/PhotoGallery";
+import AdviceCallout from "@/components/AdviceCallout";
 import ProductRange from "@/components/ProductRange";
 import ContactSection from "@/components/ContactSection";
 
 export const metadata: Metadata = {
   title: "Acoustic Insulation | Consolidated Energy",
   description:
-    "Acoustic insulation products from Consolidated Energy help soundproof homes and commercial spaces from traffic, neighbours and everyday noise.",
+    "Acoustic insulation helps reduce sound transfer between rooms, floors and adjoining spaces, creating quieter and more comfortable indoor environments.",
 };
 
 export default function AcousticInsulationPage() {
@@ -18,54 +19,29 @@ export default function AcousticInsulationPage() {
       <ProductHero
         eyebrow="Insulation"
         title="Acoustic Insulation"
-        tagline="Soundproof your home from noise, indoors and out"
-        description="Traffic, neighbours and even your own family can cause noise-related stress and discomfort. Our acoustic insulation products help soundproof the home."
+        tagline="Reduce unwanted noise for quieter, more comfortable spaces"
+        description="Noise from traffic, neighbours and everyday household activity can affect the comfort and enjoyment of a home. Acoustic insulation helps reduce sound transfer between rooms, floors and adjoining spaces, creating quieter and more comfortable indoor environments."
         variant="insulation"
       />
 
       <section className="bg-surface py-20 lg:py-24">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-12">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-8 lg:gap-12">
           <p className="text-ink/60 text-[15px] leading-relaxed">
-            We supply acoustic batts designed for residential and commercial
-            buildings during construction, dampening noise transfer through
-            walls, floors and ceilings before the linings go up.
+            Consolidated Energy offers its own range of high-density glasswool
+            acoustic batts, alongside acoustic insulation solutions from
+            leading manufacturers for residential and commercial construction.
+            Our range includes products designed for internal walls, floors,
+            ceilings and other applications where reducing noise transfer and
+            improving acoustic comfort are important.
           </p>
           <p className="text-ink/60 text-[15px] leading-relaxed">
-            For existing spaces, we also supply specialist commercial
-            products such as sound-absorbing panels for offices, cafes,
-            restaurants and residential spaces where hard surfaces cause
-            acoustic issues.
+            We also offer specialist acoustic products for spaces where hard
+            surfaces and high noise levels can affect sound quality, including
+            offices, cafés, restaurants, auditoriums and other residential and
+            commercial environments.
           </p>
         </div>
       </section>
-
-      <IconFeatureGrid
-        eyebrow="Why It Matters"
-        title="Acoustic insulation benefits"
-        items={[
-          {
-            icon: "speakerMute",
-            label: "Reduces Noise Transfer",
-            description: "Cuts down on unwanted sound moving through walls and floors.",
-          },
-          {
-            icon: "wave",
-            label: "Sound Absorption",
-            description: "Dampens noise from traffic, neighbours and everyday household life.",
-          },
-          {
-            icon: "home",
-            label: "Better Rest",
-            description: "Ideal for bedrooms, home theatres and ensuites.",
-          },
-          {
-            icon: "suitcase",
-            label: "Commercial Ready",
-            description: "Suited to offices, cafes and restaurants with hard, noisy surfaces.",
-          },
-        ]}
-        columns={4}
-      />
 
       <PhotoGallery
         eyebrow="On the Job"
@@ -98,34 +74,115 @@ export default function AcousticInsulationPage() {
         ]}
       />
 
+      <IconFeatureGrid
+        eyebrow="Why It Matters"
+        title="Acoustic Insulation Benefits"
+        items={[
+          {
+            icon: "speakerMute",
+            label: "Reduced Noise Transfer",
+            description:
+              "Helps limit unwanted sound travelling between rooms, floors and adjoining spaces.",
+          },
+          {
+            icon: "home",
+            label: "Improved Acoustic Comfort",
+            description:
+              "Helps manage everyday noise from household activity, entertainment, traffic and neighbouring properties.",
+          },
+          {
+            icon: "shieldCheck",
+            label: "Greater Privacy",
+            description:
+              "Helps reduce sound transmission between bedrooms, bathrooms, living areas, home offices and other internal spaces.",
+          },
+          {
+            icon: "suitcase",
+            label: "Versatile Applications",
+            description:
+              "Solutions are available for homes, offices, hospitality venues and other commercial environments.",
+          },
+          {
+            icon: "wave",
+            label: "Improved Sound Quality",
+            description:
+              "Specialist acoustic products can help absorb reflected sound and reduce echo in spaces with hard surfaces.",
+          },
+          {
+            icon: "wall",
+            label: "New Builds and Existing Spaces",
+            description:
+              "Options are available for installation during construction as well as specialist acoustic treatments for existing environments.",
+          },
+        ]}
+      />
+
       <SubcategoryModules
         eyebrow="Product Range"
-        title="Acoustic insulation products"
+        title="Acoustic Insulation Products"
+        columns={3}
         items={[
+          {
+            icon: "layers",
+            title: "Consolidated Energy Acoustic Insulation",
+            description: [
+              "Consolidated Energy Acoustic Insulation is high-density glasswool designed to reduce sound transmission while also providing effective thermal performance.",
+              "Suitable for internal walls, partition systems, ceiling voids and mid-floor applications, the batts help create quieter, more comfortable indoor environments by reducing airborne noise between adjoining spaces. They can also be used in selected external wall, roof space and mechanical plant room applications where both acoustic and thermal performance are required.",
+              "Lightweight and flexible, Consolidated Energy Acoustic Insulation is suitable for a range of residential and commercial applications, including new construction and refurbishment projects.",
+            ],
+            specsLabel: "Key features and benefits include:",
+            specs: [
+              "High-density glasswool construction for effective acoustic performance",
+              "Helps reduce airborne noise transmission between adjoining spaces",
+              "Provides both acoustic and thermal insulation performance",
+              "Suitable for internal walls, partitions, ceiling voids and mid-floor applications",
+              "Available in sizes and thicknesses to suit common wall framing systems",
+              "Lightweight and flexible for practical installation",
+              "Suitable for residential and commercial new builds and refurbishment projects",
+            ],
+          },
           {
             icon: "wave",
             title: "Polymax Absorb",
-            description:
-              "Thermally bonded polyester fibre insulation available in multiple densities and thicknesses.",
+            description: [
+              "Polymax Absorb is a thermally bonded polyester fibre insulation designed to provide high-performance acoustic absorption across a broad range of frequencies.",
+              "Available in a range of densities and thicknesses, it is suitable for residential, commercial, community and industrial applications where managing noise, echo and sound quality is important.",
+            ],
+            specsLabel: "Key benefits include:",
             specs: [
-              "LD, MD, HD and XHD densities",
-              "Suits perforated panelling and ceilings",
-              "Ideal for auditoriums, cinemas, studios and sports halls",
+              "Available in low (LD), medium (MD), high (HD) and extra-high (XHD) densities",
+              "Range of thicknesses to suit different acoustic requirements",
+              "Helps reduce echo and improve sound quality",
+              "Provides effective sound absorption across a broad range of frequencies",
+              "Suitable for use behind perforated wall and ceiling panels",
+              "Ideal for auditoriums, cinemas, studios, sports halls and other noise-sensitive spaces",
             ],
           },
           {
             icon: "speakerMute",
-            title: "Bradford Soundscreen",
-            description:
-              "Reduces noise transfer through internal walls and mid-floors by up to 75%.",
-            specs: [
-              "Up to 75% noise reduction",
-              "Suits home theatres and bedrooms",
-              "Ideal for ensuites and laundries",
+            title: "Bradford SoundScreen",
+            description: [
+              "Bradford SoundScreen acoustic insulation is designed to reduce noise transfer through internal walls and between floors, helping create quieter and more comfortable living spaces.",
+              "Suitable for use throughout the home, SoundScreen is particularly useful around bedrooms, home theatres, bathrooms, laundries and other areas where controlling noise transfer and improving privacy are important.",
             ],
+            specsLabel: "Key benefits include:",
+            specs: [
+              "Reduces noise transfer through internal walls and mid-floors",
+              "Helps improve privacy between rooms",
+              "Suitable for a wide range of residential applications",
+              "Ideal for bedrooms, home theatres, bathrooms and laundries",
+            ],
+            download: {
+              label: "Bradford SoundScreen Data Sheet",
+              href: "/downloads/insulation/soundscreen-datasheet-bftk.pdf",
+            },
           },
         ]}
       />
+
+      <AdviceCallout>
+        {"For advice on the right acoustic insulation solution for your project, contact the Consolidated Energy team."}
+      </AdviceCallout>
 
       <ProductRange exclude="insulation" />
       <ContactSection />

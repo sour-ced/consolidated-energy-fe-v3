@@ -8,7 +8,7 @@ const COLUMNS = [
       { label: "Full Product Range", href: "/products" },
       { label: "Air Conditioning", href: "/air-conditioning" },
       { label: "Continuous Gas Hot Water", href: "/gas-hot-water" },
-      { label: "Heat Pumps", href: "/heat-pumps" },
+      { label: "Heat Pump Hot Water", href: "/heat-pumps" },
       { label: "Insulation", href: "/insulation" },
       { label: "Ceilings", href: "/ceilings" },
       { label: "Solar Power", href: "/solar-power" },
@@ -19,11 +19,7 @@ const COLUMNS = [
     links: [
       { label: "About Us", href: "/about" },
       { label: "Our Network", href: "/our-network" },
-      {
-        label: "Careers",
-        href: "https://ambrosiumgroup.careers.hibob.com/jobs",
-        target: "_blank",
-      },
+      { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/contact" },
     ],
   },
@@ -68,8 +64,6 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    target={link.target}
-                    rel={link.target === "_blank" ? "noopener noreferrer" : undefined}
                     className="text-[14px] text-white/70 hover:text-white transition-colors"
                   >
                     {link.label}

@@ -7,15 +7,16 @@ export const PRODUCTS = [
     number: "01",
     title: "Insulation",
     description:
-      "All types of insulation products for residential and commercial builds.",
+      "Thermal and acoustic insulation solutions for residential construction, including ceiling and wall insulation, wall wraps and roof sarking.",
     variant: "insulation" as const,
     tag: "National",
     href: "/insulation",
   },
   {
     number: "02",
-    title: "Heat Pumps",
-    description: "Enviroheat hot water solutions for all market conditions.",
+    title: "Heat Pump Hot Water",
+    description:
+      "Enviroheat heat pump hot water systems providing an energy-efficient alternative to conventional electric water heating.",
     variant: "heatpumps" as const,
     tag: "Enviroheat",
     href: "/heat-pumps",
@@ -23,7 +24,8 @@ export const PRODUCTS = [
   {
     number: "03",
     title: "Continuous Gas Hot Water",
-    description: "Takagi continuous flow units, wall mounted and internal.",
+    description:
+      "Takagi continuous flow gas hot water systems providing efficient, on-demand hot water for residential applications.",
     variant: "gas" as const,
     tag: "Takagi",
     href: "/gas-hot-water",
@@ -31,7 +33,8 @@ export const PRODUCTS = [
   {
     number: "04",
     title: "Air Conditioning",
-    description: "Leading brand ducted and split systems.",
+    description:
+      "Ducted, split and multi-split air conditioning systems from leading manufacturers.",
     variant: "aircon" as const,
     tag: "Ducted & Split",
     href: "/air-conditioning",
@@ -39,15 +42,17 @@ export const PRODUCTS = [
   {
     number: "05",
     title: "Solar Power",
-    description: "Systems for new and existing homes, plus battery storage.",
+    description:
+      "Solar power solutions designed around the energy requirements of new and existing homes and commercial properties.",
     variant: "solar" as const,
-    tag: "+ Battery Storage",
+    tag: "Residential & Commercial",
     href: "/solar-power",
   },
   {
     number: "06",
     title: "Ceilings",
-    description: "Precision Ceilings — Western Australia only.",
+    description:
+      "Ceiling services from project tendering and take-offs through to installation and completion for our Western Australian customers.",
     variant: "ceilings" as const,
     tag: "WA Only",
     tagAccent: true,
@@ -61,6 +66,7 @@ export default function ProductRange({
   showAllLink = true,
   eyebrow = "Product Range",
   heading,
+  intro,
   compact = false,
   showNumbers = true,
   showTags = false,
@@ -69,6 +75,7 @@ export default function ProductRange({
   showAllLink?: boolean;
   eyebrow?: string;
   heading?: string;
+  intro?: string;
   compact?: boolean;
   showNumbers?: boolean;
   showTags?: boolean;
@@ -86,9 +93,14 @@ export default function ProductRange({
               {eyebrow}
             </p>
             {heading && (
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-[42px] leading-[1.1] text-ink max-w-xl">
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-[42px] leading-[1.1] text-ink max-w-2xl">
                 {heading}
               </h2>
+            )}
+            {intro && (
+              <p className="mt-5 text-ink/60 text-[15px] leading-relaxed max-w-2xl">
+                {intro}
+              </p>
             )}
           </div>
           {showAllLink && (

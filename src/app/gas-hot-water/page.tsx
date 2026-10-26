@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import ProductHero from "@/components/ProductHero";
 import IconFeatureGrid from "@/components/IconFeatureGrid";
-import SubcategoryModules from "@/components/SubcategoryModules";
 import DownloadPanel from "@/components/DownloadPanel";
 import BrandCallout from "@/components/BrandCallout";
 import ProductRange from "@/components/ProductRange";
 import ContactSection from "@/components/ContactSection";
+import Icon from "@/components/Icons";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Continuous Gas Hot Water | Consolidated Energy",
@@ -46,6 +47,39 @@ const TAKAGI_ICON_FEATURES = [
   },
 ];
 
+const WARRANTY_HREF =
+  "/downloads/gas-hot-water/Takagi-Continuous-Flow-Water-Heating-Products-Warranty-V1-131013.pdf";
+const USER_MANUAL_HREF =
+  "/downloads/gas-hot-water/Takagi-manual-GS-20W-AU56-GS-26W-AU56-06272019-R-k488.pdf";
+
+const TAKAGI_DOCS = [
+  { icon: "shieldCheck" as const, label: "Warranty", href: WARRANTY_HREF },
+  { icon: "clipboard" as const, label: "User Manual", href: USER_MANUAL_HREF },
+];
+
+const TAKAGI_MODELS = [
+  {
+    title: "GS-20W — 20L/min",
+    description:
+      "Suits smaller households and single-bathroom homes with moderate simultaneous hot water demand.",
+    specs: [
+      "20 litres per minute flow rate",
+      "Natural Gas or LPG",
+      "Wall-mounted or recess-box install",
+    ],
+  },
+  {
+    title: "GS-26W — 26L/min",
+    description:
+      "Higher flow rate for larger households and multi-bathroom homes running several outlets at once.",
+    specs: [
+      "26 litres per minute flow rate",
+      "Natural Gas or LPG",
+      "Optional remote controller",
+    ],
+  },
+];
+
 export default function GasHotWaterPage() {
   return (
     <>
@@ -58,32 +92,19 @@ export default function GasHotWaterPage() {
       />
 
       <section className="bg-surface py-20 lg:py-24">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-12">
-          <div className="text-ink/60 text-[15px] leading-relaxed flex flex-col gap-4">
-            <p>
-              Takagi systems heat water on demand only, eliminating the
-              standing losses of a storage tank. Compact, tankless and
-              wall-mountable, they deliver instant heating and are 100%
-              compatible with solar systems.
-            </p>
-            <p>
-              Because hot water represents around 25% of household energy
-              use, an on-demand system produces 25&ndash;33% fewer greenhouse
-              gases than an electric storage system &ndash; and optional
-              remote controls mean no more manual tap adjustment.
-            </p>
-          </div>
-          <div className="bg-section p-6 flex flex-col justify-center">
-            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-ink/40 mb-2">
-              Selecting the right model
-            </p>
-            <p className="text-[14px] text-ink leading-relaxed">
-              Model choice comes down to household size, expected simultaneous
-              hot water demand and local climate &ndash; speak to our team and
-              we&apos;ll help you specify the right flow rate and fuel type
-              for the build.
-            </p>
-          </div>
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid md:grid-cols-2 gap-4 md:gap-12 text-ink/60 text-[15px] leading-relaxed">
+          <p>
+            Takagi systems heat water on demand only, eliminating the
+            standing losses of a storage tank. Compact, tankless and
+            wall-mountable, they deliver instant heating and are 100%
+            compatible with solar systems.
+          </p>
+          <p>
+            Because hot water represents around 25% of household energy
+            use, an on-demand system produces 25&ndash;33% fewer greenhouse
+            gases than an electric storage system &ndash; and optional
+            remote controls mean no more manual tap adjustment.
+          </p>
         </div>
       </section>
 
@@ -93,56 +114,92 @@ export default function GasHotWaterPage() {
         items={TAKAGI_ICON_FEATURES}
       />
 
-      <SubcategoryModules
-        eyebrow="The Range"
-        title="Choose the right flow rate"
-        intro="Available in Natural Gas and LPG, with wall-mounted and internal recess-box options for a flush finish."
-        items={[
-          {
-            title: "GS-20W — 20L/min",
-            description:
-              "Suits smaller households and single-bathroom homes with moderate simultaneous hot water demand.",
-            specs: [
-              "20 litres per minute flow rate",
-              "Natural Gas or LPG",
-              "Wall-mounted or recess-box install",
-            ],
-            download: {
-              label: "GS-20W user manual",
-              href: "/downloads/gas-hot-water/Takagi-manual-GS-20W-AU56-GS-26W-AU56-06272019-R-k488.pdf",
-            },
-          },
-          {
-            title: "GS-26W — 26L/min",
-            description:
-              "Higher flow rate for larger households and multi-bathroom homes running several outlets at once.",
-            specs: [
-              "26 litres per minute flow rate",
-              "Natural Gas or LPG",
-              "Optional remote controller",
-            ],
-            download: {
-              label: "GS-26W user manual",
-              href: "/downloads/gas-hot-water/Takagi-manual-GS-20W-AU56-GS-26W-AU56-06272019-R-k488.pdf",
-            },
-          },
-        ]}
-      />
+      <section className="bg-section py-20 lg:py-24">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+          <p className="text-brand-green-dark text-[12px] font-bold uppercase tracking-[0.15em] mb-3">
+            The Range
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl leading-[1.1] text-ink max-w-2xl">
+            Choose the right flow rate
+          </h2>
+
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Reveal className="sm:col-span-2 lg:col-span-1 bg-brand-dark text-white border border-white/10 p-7 flex flex-col h-full">
+              <h3 className="font-display text-lg text-brand-green">
+                Choosing the Right Model
+              </h3>
+              <div className="mt-3 text-[14px] text-white/70 leading-relaxed flex-1 flex flex-col gap-3">
+                <p>
+                  Choosing the right hot water system depends on household
+                  size, expected hot water demand, local climate and how the
+                  system will be installed.
+                </p>
+                <p>
+                  Available in Natural Gas and LPG, with a range of flow rates
+                  and installation options including wall-mounted and internal
+                  recess-box configurations, systems can be selected to suit
+                  different homes and project requirements.
+                </p>
+                <p>
+                  Our team can help identify the appropriate flow rate, fuel
+                  type and configuration for your build.
+                </p>
+              </div>
+              <div className="mt-6 flex flex-wrap gap-3">
+                {TAKAGI_DOCS.map((doc) => (
+                  <a
+                    key={doc.href}
+                    href={doc.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-sm bg-brand-green px-5 py-3 text-[12px] font-bold uppercase tracking-wide text-brand-dark hover:bg-white transition-colors"
+                  >
+                    <Icon name={doc.icon} className="w-4 h-4" />
+                    {doc.label}
+                    <span className="sr-only"> (PDF, opens in a new tab)</span>
+                  </a>
+                ))}
+              </div>
+            </Reveal>
+
+            {TAKAGI_MODELS.map((model, i) => (
+              <Reveal
+                key={model.title}
+                delay={(i + 1) * 100}
+                className="bg-surface border border-ink/5 p-7 flex flex-col h-full"
+              >
+                <h3 className="font-display text-lg text-ink">{model.title}</h3>
+                <p className="mt-2 text-[14px] text-ink/55 leading-relaxed flex-1">
+                  {model.description}
+                </p>
+                <ul className="mt-4 pt-4 border-t border-ink/10 flex flex-col gap-1.5">
+                  {model.specs.map((spec) => (
+                    <li
+                      key={spec}
+                      className="text-[12.5px] text-ink/70 flex items-start gap-2"
+                    >
+                      <span className="w-1 h-1 rounded-full bg-brand-green-dark shrink-0 mt-[7px]" />
+                      {spec}
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <DownloadPanel
         eyebrow="Product Downloads"
         items={[
+          { label: "Warranty", href: WARRANTY_HREF },
           {
-            label: "Warranty documentation",
-            href: "/downloads/gas-hot-water/Takagi-Continuous-Flow-Water-Heating-Products-Warranty-V1-131013.pdf",
+            label: "User Manual — GS-20W / GS-26W (AU56)",
+            href: USER_MANUAL_HREF,
           },
           {
             label: "Product brochure",
             href: "/downloads/gas-hot-water/Takagi-Brochure.pdf",
-          },
-          {
-            label: "GS-20W / GS-26W (AU56) user manual",
-            href: "/downloads/gas-hot-water/Takagi-manual-GS-20W-AU56-GS-26W-AU56-06272019-R-k488.pdf",
           },
         ]}
         hubHref="/information-hub#gas-hot-water"
