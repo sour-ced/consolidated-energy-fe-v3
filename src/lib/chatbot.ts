@@ -59,7 +59,7 @@ const RULES: Rule[] = [
     test: (m) =>
       /\b(insulat|ceiling insulation|acoustic|wall wrap|sarking|rockwool|mineral wool|glasswool)/.test(m),
     reply:
-      "We're the largest independent insulation distributor in Australia, covering ceiling insulation, acoustic insulation, external wall insulation, wall wraps, roof sarking, and stone/mineral wool. Visit our Insulation page for the full range, or ask about a specific type.",
+      "We're the largest independent insulation distributor in Australia, covering ceiling insulation, acoustic insulation, wall insulation, wall wraps, roof sarking, and stone/mineral wool. Visit our Insulation page for the full range, or ask about a specific type.",
   },
   {
     test: (m) => /\b(heat pump|enviroheat)/.test(m),

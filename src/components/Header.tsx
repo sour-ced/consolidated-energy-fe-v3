@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 import ThemeToggle from "./ThemeToggle";
 import { useDarkMode } from "./useDarkMode";
+import { INSULATION_TYPES } from "@/lib/insulation";
 
 type ProductLink = { label: string; href: string; children?: ProductLink[] };
 
@@ -21,7 +22,11 @@ const PRODUCT_LINKS: ProductLink[] = [
   },
   { label: "Continuous Gas Hot Water", href: "/gas-hot-water" },
   { label: "Heat Pump Hot Water", href: "/heat-pumps" },
-  { label: "Insulation", href: "/insulation" },
+  {
+    label: "Insulation",
+    href: "/insulation",
+    children: INSULATION_TYPES.map(({ title, href }) => ({ label: title, href })),
+  },
   { label: "Ceilings", href: "/ceilings" },
   { label: "Solar Power", href: "/solar-power" },
 ];
@@ -118,7 +123,7 @@ export default function Header() {
                             </Link>
                             <button
                               type="button"
-                              aria-label={`Show ${item.label} systems`}
+                              aria-label={`Show ${item.label} types`}
                               aria-expanded={subOpen === item.label}
                               onClick={() =>
                                 setSubOpen((v) => (v === item.label ? null : item.label))

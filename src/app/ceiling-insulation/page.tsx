@@ -1,17 +1,22 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ProductHero from "@/components/ProductHero";
+import InsulationTypeNav from "@/components/InsulationTypeNav";
 import IconFeatureGrid from "@/components/IconFeatureGrid";
 import SubcategoryModules from "@/components/SubcategoryModules";
-import PhotoGallery from "@/components/PhotoGallery";
+import Reveal from "@/components/Reveal";
 import AdviceCallout from "@/components/AdviceCallout";
 import ProductRange from "@/components/ProductRange";
 import ContactSection from "@/components/ContactSection";
+import { insulationType } from "@/lib/insulation";
 
 export const metadata: Metadata = {
   title: "Ceiling Insulation | Consolidated Energy",
   description:
     "Ceiling insulation helps reduce heat transfer through the roof space, keeping homes warmer in winter and cooler in summer.",
 };
+
+const TYPE = insulationType("/ceiling-insulation");
 
 export default function CeilingInsulationPage() {
   return (
@@ -22,7 +27,10 @@ export default function CeilingInsulationPage() {
         tagline="Improve year-round comfort and energy efficiency"
         description="Ceiling insulation helps reduce heat transfer through the roof space, keeping homes warmer in winter and cooler in summer."
         variant="insulation"
+        imageSrc={TYPE.src}
+        imageAlt={TYPE.alt}
       />
+      <InsulationTypeNav current={TYPE.href} />
 
       <section className="bg-surface py-20 lg:py-24">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-3 gap-8 lg:gap-12">
@@ -47,24 +55,25 @@ export default function CeilingInsulationPage() {
         </div>
       </section>
 
-      <PhotoGallery
-        eyebrow="On the Job"
-        title="Ceiling insulation in Australian homes"
-        photos={[
-          {
-            src: "/images/insulation/ceiling-install-roof-truss.jpg",
-            alt: "Installer fitting glasswool batts between roof trusses",
-          },
-          {
-            src: "/images/insulation/ceiling-insulation-bags-range.jpg",
-            alt: "Consolidated Energy ceiling insulation bags in R5.0, R4.1 and R3.0",
-          },
-          {
-            src: "/images/insulation/ceiling-insulation-bag.jpg",
-            alt: "Consolidated Energy ceiling insulation product bag",
-          },
-        ]}
-      />
+      <section className="bg-section py-20 lg:py-24">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+          <p className="text-brand-green-dark text-[12px] font-bold uppercase tracking-[0.15em] mb-3">
+            On the Job
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl leading-[1.1] text-ink max-w-xl mb-12">
+            Ceiling insulation in Australian homes
+          </h2>
+          <Reveal className="relative aspect-[4/3] sm:aspect-[16/9] lg:aspect-[2/1] overflow-hidden bg-ink/5">
+            <Image
+              src="/images/insulation/ceiling-install-roof-truss.jpg"
+              alt="Installer fitting glasswool batts between roof trusses"
+              fill
+              sizes="(max-width: 1400px) 100vw, 1320px"
+              className="object-cover object-[50%_70%]"
+            />
+          </Reveal>
+        </div>
+      </section>
 
       <IconFeatureGrid
         eyebrow="Why It Matters"
@@ -117,6 +126,11 @@ export default function CeilingInsulationPage() {
           {
             icon: "home",
             title: "Consolidated Energy Ceiling Insulation",
+            image: {
+              src: "/images/insulation/ceiling-insulation-bags-range.jpg",
+              alt: "Consolidated Energy ceiling insulation bags in R5.0, R4.1 and R3.0",
+              fit: "cover",
+            },
             description: [
               "Consolidated Energy Ceiling Batts are glasswool insulation designed to reduce heat transfer through the ceiling, helping create more comfortable and energy-efficient homes and buildings throughout the year.",
               "Available in a range of R-values and thicknesses, our ceiling batts provide a practical and versatile insulation solution for residential and commercial construction. Different thermal ratings allow the appropriate product to be selected to suit climate zones, building designs and project energy-efficiency requirements.",
@@ -139,6 +153,11 @@ export default function CeilingInsulationPage() {
           {
             icon: "layers",
             title: "Fletcher Insulation",
+            image: {
+              src: "/images/insulation/products/fletcher-pink-batts-ceiling.jpg",
+              alt: "Fletcher Insulation Pink Batts ceiling insulation pack",
+              fit: "contain",
+            },
             description: [
               "Fletcher Insulation is a leading Australian insulation manufacturer providing thermal and acoustic solutions for residential and commercial construction.",
               "Consolidated Energy supplies a range of Fletcher Insulation products to suit different building requirements and applications.",
@@ -151,6 +170,11 @@ export default function CeilingInsulationPage() {
           {
             icon: "star",
             title: "Bradford Gold",
+            image: {
+              src: "/images/insulation/products/bradford-gold-ceiling.jpg",
+              alt: "Bradford Gold Hi-Performance R6.0 ceiling batts pack in front of insulated wall framing",
+              fit: "cover",
+            },
             description: [
               "Bradford Gold ceiling insulation is manufactured from glasswool and is available in a range of R-values to suit different residential applications.",
               "Designed to improve the thermal performance of the home, Bradford Gold helps maintain more comfortable indoor temperatures while reducing reliance on heating and cooling.",
@@ -172,6 +196,11 @@ export default function CeilingInsulationPage() {
           {
             icon: "shield",
             title: "Stone / Mineral Fibre Ceiling Insulation",
+            image: {
+              src: "/images/insulation/products/stone-mineral-wool-batts.jpg",
+              alt: "Stack of stone and mineral fibre insulation batts",
+              fit: "contain",
+            },
             description: [
               "Stone and mineral fibre insulation provides high-performance thermal and acoustic insulation for applications where additional performance may be required.",
               "Available in a range of thicknesses and dimensions, these products can help reduce heat transfer, improve acoustic performance and provide enhanced fire resistance.",

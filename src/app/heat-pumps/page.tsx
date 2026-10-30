@@ -95,6 +95,15 @@ const ENVIROHEAT_FEATURES = [
   { icon: "shield" as const, label: "Dual Anodes" },
 ];
 
+const CERTIFICATIONS = [
+  { src: "/images/certifications/australian-standard.png", alt: "Australian Standard Certified Product", width: 127 },
+  { src: "/images/certifications/oceana-mark.png", alt: "IAPMO R&T Oceana OceanaMark", width: 169 },
+  { src: "/images/certifications/nf.png", alt: "NF certification", width: 330 },
+  { src: "/images/certifications/ce.png", alt: "CE marking", width: 336 },
+  { src: "/images/certifications/cb.png", alt: "CB Scheme", width: 322 },
+  { src: "/images/certifications/watermark.png", alt: "WaterMark certification", width: 330 },
+];
+
 export default function HeatPumpsPage() {
   return (
     <>
@@ -326,15 +335,36 @@ export default function HeatPumpsPage() {
         hubHref="/information-hub#heat-pumps"
       />
 
-      <section className="bg-section py-16 lg:py-20">
-        <Reveal className="mx-auto max-w-[1400px] px-6 lg:px-10">
+      <section className="bg-surface border-t border-ink/5 py-16 lg:py-20">
+        <Reveal className="mx-auto max-w-[1400px] px-6 lg:px-10 flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-16">
           <Image
             src="/images/brand-enviroheat.png"
             alt="Enviroheat"
             width={600}
             height={197}
-            className="h-14 w-auto"
+            className="h-14 w-auto self-start lg:self-auto"
           />
+          <div className="flex-1">
+            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-ink/40 mb-4">
+              Certifications &amp; Standards
+            </p>
+            <ul className="flex flex-wrap items-center gap-3">
+              {CERTIFICATIONS.map((cert) => (
+                <li
+                  key={cert.src}
+                  className="flex items-center justify-center h-20 px-4 bg-white border border-ink/10"
+                >
+                  <Image
+                    src={cert.src}
+                    alt={cert.alt}
+                    width={cert.width}
+                    height={240}
+                    className="h-12 w-auto"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
         </Reveal>
       </section>
 

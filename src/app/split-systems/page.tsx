@@ -274,7 +274,8 @@ export default function SplitSystemsPage() {
         backLabel="Back to Air Conditioning"
         href="/ducted-air-conditioning"
         title="Ducted Air Conditioning"
-        imageClass="object-[85%_30%]"
+        image="/images/aircon/ducted.jpg"
+        imageClass="object-[20%_30%]"
       />
 
       <ProductRange exclude="aircon" />

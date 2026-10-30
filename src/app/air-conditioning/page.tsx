@@ -18,20 +18,23 @@ const RANGE_CARDS: {
   href: string;
   title: string;
   icon: IconName;
+  image: string;
   imageClass: string;
 }[] = [
   {
     href: "/ducted-air-conditioning",
     title: "Ducted Air Conditioning",
     icon: "wind",
-    // Same source photo as the split card (only aircon image supplied);
-    // bias the crop right towards the ceiling line and doorway.
-    imageClass: "object-[85%_30%]",
+    // Living room with ceiling-mounted ducted outlets.
+    image: "/images/aircon/ducted.jpg",
+    // Keep the bulkhead grille (top left) in frame.
+    imageClass: "object-[20%_30%]",
   },
   {
     href: "/split-systems",
     title: "Split & Multi-Split Systems",
     icon: "fan",
+    image: "/images/product-aircon.jpg",
     // Bias the crop left towards the wall-mounted indoor unit.
     imageClass: "object-[15%_30%]",
   },
@@ -140,7 +143,7 @@ export default function AirConditioningPage() {
                 >
                   <span className="absolute inset-0 overflow-hidden transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transition-none">
                     <Image
-                      src="/images/product-aircon.jpg"
+                      src={card.image}
                       alt=""
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"

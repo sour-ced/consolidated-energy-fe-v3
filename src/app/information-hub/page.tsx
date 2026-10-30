@@ -7,7 +7,7 @@ import ContactSection from "@/components/ContactSection";
 export const metadata: Metadata = {
   title: "Information Hub | Consolidated Energy",
   description:
-    "Warranty documents, brochures, spec sheets and user manuals for every Consolidated Energy product category, in one place.",
+    "Warranty documents, brochures, spec sheets and user manuals for Consolidated Energy insulation, hot water and air conditioning products, in one place.",
 };
 
 type Doc = { label: string; type: string; href: string };
@@ -316,27 +316,6 @@ const CATEGORIES: {
           },
         ],
       },
-    ],
-  },
-  {
-    id: "solar-power",
-    icon: "sun",
-    title: "Solar Power",
-    productHref: "/solar-power",
-    docs: [
-      { label: "Solar panel & inverter spec sheet", type: "Spec Sheet", href: "#" },
-      { label: "Solar power warranty terms", type: "Warranty", href: "#" },
-    ],
-  },
-  {
-    id: "ceilings",
-    icon: "layers",
-    title: "Ceilings — Precision Ceilings (WA)",
-    productHref: "/ceilings",
-    docs: [
-      { label: "Precision Ceilings capability statement", type: "Brochure", href: "#" },
-      { label: "Residential ceilings brochure", type: "Brochure", href: "#" },
-      { label: "Ceilings warranty terms", type: "Warranty", href: "#" },
     ],
   },
 ];

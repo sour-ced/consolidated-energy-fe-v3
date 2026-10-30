@@ -1,17 +1,21 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import ProductHero from "@/components/ProductHero";
+import InsulationTypeNav from "@/components/InsulationTypeNav";
 import IconFeatureGrid from "@/components/IconFeatureGrid";
 import SubcategoryModules from "@/components/SubcategoryModules";
 import AdviceCallout from "@/components/AdviceCallout";
 import ProductRange from "@/components/ProductRange";
 import ContactSection from "@/components/ContactSection";
+import { insulationType } from "@/lib/insulation";
 
 export const metadata: Metadata = {
   title: "Wall Wraps | Consolidated Energy",
   description:
     "Wall wraps are pliable building membranes installed to the outside of the building frame, providing an additional layer of protection during construction and once the home is complete.",
 };
+
+const TYPE = insulationType("/wall-wraps");
 
 export default function WallWrapsPage() {
   return (
@@ -22,9 +26,12 @@ export default function WallWrapsPage() {
         tagline="Protect the frame, manage condensation and improve comfort"
         description="Wall wraps are pliable building membranes installed to the outside of the building frame, providing an additional layer of protection during construction and once the home is complete."
         variant="insulation"
+        imageSrc={TYPE.src}
+        imageAlt={TYPE.alt}
       />
+      <InsulationTypeNav current={TYPE.href} />
 
-      <section className="bg-surface py-20 lg:py-24">
+      <section className="bg-surface py-20 lg:py-24 border-b border-ink/5">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col gap-4">
             <p className="text-ink/60 text-[15px] leading-relaxed">
@@ -98,6 +105,11 @@ export default function WallWrapsPage() {
           {
             icon: "droplet",
             title: "Bradford Thermoseal Wall Wrap",
+            image: {
+              src: "/images/insulation/products/bradford-thermoseal.jpg",
+              alt: "Bradford Thermoseal reflective wall wrap roll",
+              fit: "contain",
+            },
             description: [
               "Bradford Thermoseal is a non-permeable reflective wall wrap designed to act as a vapour barrier and reduce the transmission of moisture through the building structure.",
               "When installed adjacent to an appropriate air cavity, its reflective surface can also contribute to the thermal performance of the wall system. Thermoseal is suited to applications where a non-permeable membrane is appropriate for the climate and building design.",
@@ -114,6 +126,11 @@ export default function WallWrapsPage() {
           {
             icon: "wind",
             title: "Enviroseal ProctorWrap",
+            image: {
+              src: "/images/insulation/products/enviroseal-proctorwrap.jpg",
+              alt: "Water beading on Enviroseal ProctorWrap vapour-permeable membrane",
+              fit: "cover",
+            },
             description: [
               "Enviroseal ProctorWrap is a vapour-permeable wall wrap that allows water vapour to pass through the membrane while helping prevent liquid water and dust from entering from outside.",
               "Its vapour-permeable construction can assist with condensation management by allowing moisture within the building envelope to escape, making it particularly suited to applications where moisture management is important.",
@@ -131,6 +148,11 @@ export default function WallWrapsPage() {
           {
             icon: "shield",
             title: "Ametalin SilverWrap™",
+            image: {
+              src: "/images/insulation/products/ametalin-silverwrap.jpg",
+              alt: "Roll of Ametalin SilverWrap reflective wall wrap",
+              fit: "cover",
+            },
             description:
               "Ametalin SilverWrap™ is a reflective wall wrap designed for residential and commercial construction, combining moisture and weather protection with reflective thermal performance.",
             specsLabel: "Key features include:",
@@ -147,6 +169,11 @@ export default function WallWrapsPage() {
           {
             icon: "layers",
             title: "Ametalin SilverSark®",
+            image: {
+              src: "/images/insulation/products/ametalin-silversark.jpg",
+              alt: "Ametalin SilverSark double-sided reflective foil roll",
+              fit: "contain",
+            },
             description: [
               "Ametalin SilverSark® is an extra heavy-duty, double-sided reflective foil insulation and radiant barrier suitable for roof and wall applications.",
               "Its double-sided reflective construction can contribute to the overall thermal performance of the building system while also providing condensation and moisture management benefits.",

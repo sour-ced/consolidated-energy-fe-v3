@@ -11,23 +11,23 @@ export type Office = {
 
 export const OFFICES: Office[] = [
   {
-    code: "VIC",
-    state: "Victoria",
-    tag: "National Head Office",
-    city: "Melbourne",
-    address: ["102 Indian Drive", "Keysborough VIC 3173"],
-    phone: "(03) 9794 8250",
-    email: "vic@consolidatedenergy.com.au",
-    position: [-37.9908, 145.1546],
-  },
-  {
     code: "WA",
     state: "Western Australia",
+    tag: "Head Office",
     city: "Perth",
     address: ["11 Cressall Rd", "Balcatta WA 6021"],
     phone: "(08) 6270 6400",
     email: "WA@consolidatedenergy.com.au",
     position: [-31.8747, 115.8236],
+  },
+  {
+    code: "VIC",
+    state: "Victoria",
+    city: "Melbourne",
+    address: ["102 Indian Drive", "Keysborough VIC 3173"],
+    phone: "(03) 9794 8250",
+    email: "vic@consolidatedenergy.com.au",
+    position: [-37.9908, 145.1546],
   },
   {
     code: "QLD",

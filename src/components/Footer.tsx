@@ -40,9 +40,9 @@ export default function Footer() {
         <div>
           <Logo />
           <p className="mt-5 text-[14px] text-white/50 leading-relaxed max-w-[220px]">
-            102 Indian Drive,
+            11 Cressall Rd,
             <br />
-            Keysborough, VIC, 3173,
+            Balcatta WA 6021,
             <br />
             Australia
           </p>

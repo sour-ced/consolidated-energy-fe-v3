@@ -5,6 +5,11 @@ import SubcategoryModules from "@/components/SubcategoryModules";
 import AdviceCallout from "@/components/AdviceCallout";
 import ProductRange from "@/components/ProductRange";
 import ContactSection from "@/components/ContactSection";
+import InsulationTypeNav from "@/components/InsulationTypeNav";
+import { insulationType } from "@/lib/insulation";
+
+const HREF = "/roof-sarking";
+const TYPE = insulationType(HREF);
 
 export const metadata: Metadata = {
   title: "Roof Sarking | Consolidated Energy",
@@ -21,7 +26,10 @@ export default function RoofSarkingPage() {
         tagline="A protective second skin for your roof"
         description="Roof sarking is a pliable membrane installed beneath the roof covering to provide an additional layer of protection for the home."
         variant="insulation"
+        imageSrc={TYPE.src}
+        imageAlt={TYPE.alt}
       />
+      <InsulationTypeNav current={HREF} />
 
       <section className="bg-surface py-20 lg:py-24">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-12">
@@ -87,6 +95,11 @@ export default function RoofSarkingPage() {
           {
             icon: "layers",
             title: "Bradford Thermofoil",
+            image: {
+              src: "/images/insulation/products/bradford-thermofoil.jpg",
+              alt: "Reflective foil sarking installed under timber roof battens",
+              fit: "cover",
+            },
             description: [
               "Bradford Thermofoil Medium Duty Foil is a strong, reflective building membrane designed for use in residential and commercial roofing applications.",
               "Its woven construction combines strength and durability with a reflective surface to support the thermal performance of the roof system.",
@@ -104,6 +117,12 @@ export default function RoofSarkingPage() {
           {
             icon: "sun",
             title: "Polyair Thermo Reflective",
+            image: {
+              src: "/images/insulation/products/polyair-thermo-reflective.jpg",
+              alt: "Reflective thermal membrane lining the underside of a steel-framed roof",
+              // 570x225 source: contain shows the whole banner near native size instead of upscaling a centre crop.
+              fit: "contain",
+            },
             description:
               "Polyair Thermo Reflective is a reflective thermal membrane designed to help improve the thermal performance of the roof cavity.",
             specsLabel: "Key features include:",
@@ -117,6 +136,12 @@ export default function RoofSarkingPage() {
           {
             icon: "shieldCheck",
             title: "Polyair Performa XHD",
+            image: {
+              src: "/images/insulation/products/polyair-performa-xhd.jpg",
+              alt: "Heavy-duty reflective membrane installed beneath a commercial steel roof",
+              // 570x225 source: see Thermo Reflective above.
+              fit: "contain",
+            },
             description:
               "Polyair Performa XHD is an extra heavy-duty reflective membrane designed for applications requiring increased strength and durability.",
             specsLabel: "Key features include:",

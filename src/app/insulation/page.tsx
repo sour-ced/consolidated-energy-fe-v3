@@ -3,59 +3,14 @@ import ProductHero from "@/components/ProductHero";
 import PhotoGallery from "@/components/PhotoGallery";
 import ProductRange from "@/components/ProductRange";
 import ContactSection from "@/components/ContactSection";
-import CategoryLinkCards, {
-  type CategoryLinkItem,
-} from "@/components/CategoryLinkCards";
+import CategoryLinkCards from "@/components/CategoryLinkCards";
+import { INSULATION_TYPES } from "@/lib/insulation";
 
 export const metadata: Metadata = {
   title: "Insulation | Consolidated Energy",
   description:
     "Consolidated Energy is one of Australia's largest independent distributors of insulation, with a national distribution network supporting residential, commercial, HVAC and industrial projects across Australia.",
 };
-
-const INSULATION_TYPES: CategoryLinkItem[] = [
-  {
-    src: "/images/insulation/category-ceiling.jpg",
-    alt: "Ceiling insulation rolls",
-    title: "Ceiling Insulation",
-    description: "Improve year-round comfort and energy efficiency",
-    href: "/ceiling-insulation",
-  },
-  {
-    src: "/images/insulation/category-acoustic.jpg",
-    alt: "Acoustic ceiling panels",
-    title: "Acoustic Insulation",
-    description: "Reduce unwanted noise for quieter, more comfortable spaces",
-    href: "/acoustic-insulation",
-  },
-  {
-    src: "/images/insulation/category-wall.jpg",
-    alt: "Wall insulation batts",
-    title: "External Wall Insulation",
-    description: "Improve comfort and efficiency from the outside in",
-    href: "/external-wall-insulation",
-  },
-  {
-    src: "/images/insulation/category-sarking.jpg",
-    alt: "Roof sarking under construction",
-    title: "Roof Sarking",
-    description: "A protective second skin for your roof",
-    href: "/roof-sarking",
-  },
-  {
-    src: "/images/insulation/category-wrap.jpg",
-    alt: "Wall wrap being installed",
-    title: "Wall Wraps",
-    description: "Protect the frame, manage condensation and improve comfort",
-    href: "/wall-wraps",
-  },
-  {
-    src: "/images/insulation/category-rockwool.jpg",
-    alt: "Stone and mineral wool insulation batts",
-    title: "Stone / Mineral Wool",
-    href: "/rockwool-insulation",
-  },
-];
 
 export default function InsulationPage() {
   return (

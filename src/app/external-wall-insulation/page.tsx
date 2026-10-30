@@ -6,6 +6,11 @@ import SubcategoryModules from "@/components/SubcategoryModules";
 import AdviceCallout from "@/components/AdviceCallout";
 import ProductRange from "@/components/ProductRange";
 import ContactSection from "@/components/ContactSection";
+import InsulationTypeNav from "@/components/InsulationTypeNav";
+import { insulationType } from "@/lib/insulation";
+
+const HREF = "/external-wall-insulation";
+const TYPE = insulationType(HREF);
 
 export const metadata: Metadata = {
   title: "Wall Insulation | Consolidated Energy",
@@ -22,7 +27,10 @@ export default function ExternalWallInsulationPage() {
         tagline="Improve comfort and efficiency from the outside in"
         description="External walls can be a significant source of heat gain in summer and heat loss in winter. Wall insulation creates a thermal barrier that helps slow this heat transfer, maintaining a more comfortable and consistent indoor temperature throughout the year."
         variant="insulation"
+        imageSrc={TYPE.src}
+        imageAlt={TYPE.alt}
       />
+      <InsulationTypeNav current={HREF} />
 
       <section className="bg-surface py-20 lg:py-24">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
@@ -46,13 +54,14 @@ export default function ExternalWallInsulationPage() {
               national network.
             </p>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden bg-section">
+          {/* Source is a 500x1122 portrait: cap the box near native width and keep it portrait so it isn't upscaled or cropped to a sliver. */}
+          <div className="relative w-full max-w-[460px] mx-auto aspect-[4/5] overflow-hidden bg-section">
             <Image
-              src="/images/insulation/wall-insulation-install.jpg"
-              alt="Installer fitting glasswool batts between external wall studs"
+              src="/images/insulation/products/wall-batts-detail.jpg"
+              alt="Close-up of glasswool wall insulation batts"
               fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
+              sizes="(max-width: 540px) 100vw, 460px"
+              className="object-cover object-top"
             />
           </div>
         </div>
@@ -109,6 +118,11 @@ export default function ExternalWallInsulationPage() {
           {
             icon: "wall",
             title: "Consolidated Energy Wall Insulation",
+            image: {
+              src: "/images/insulation/wall-insulation-install.jpg",
+              alt: "Consolidated Energy installer fitting glasswool batts between wall studs",
+              fit: "cover",
+            },
             description: [
               "Consolidated Energy Wall Insulation is glasswool and is designed to reduce heat transfer through wall cavities, helping create more comfortable and energy-efficient homes and buildings throughout the year.",
               "Available in a range of R-values, thicknesses and widths, our wall batts provide a practical and versatile insulation solution for residential and commercial construction. Different thermal ratings allow the appropriate product to be selected to suit building designs, climate conditions and project energy-efficiency requirements.",
@@ -128,6 +142,11 @@ export default function ExternalWallInsulationPage() {
           {
             icon: "layers",
             title: "Fletcher Insulation",
+            image: {
+              src: "/images/insulation/products/fletcher-pink-batts-wall.jpg",
+              alt: "Fletcher Pink Batts wall insulation pack",
+              fit: "contain",
+            },
             description: [
               "Fletcher Insulation is a leading Australian manufacturer of thermal and acoustic insulation solutions for residential and commercial construction.",
               "Consolidated Energy supplies a range of Fletcher Insulation wall insulation products to suit different building designs, performance requirements and applications.",
@@ -140,6 +159,11 @@ export default function ExternalWallInsulationPage() {
           {
             icon: "grid",
             title: "Bradford Wall Insulation",
+            image: {
+              src: "/images/insulation/products/bradford-gold-wall-batts.jpg",
+              alt: "Bradford Gold R2.5 wall batts pack beside an installer fitting batts between wall studs",
+              fit: "cover",
+            },
             description: [
               "Bradford wall batts are glasswool insulation designed to improve the thermal performance of external walls and help create a more comfortable, energy-efficient home.",
               "Available in a range of R-values, Bradford wall insulation is designed for installation within wall cavities and provides thermal performance together with additional product benefits.",
@@ -169,6 +193,11 @@ export default function ExternalWallInsulationPage() {
           {
             icon: "cloud",
             title: "Stone / Mineral Wool Wall Insulation",
+            image: {
+              src: "/images/insulation/products/stone-mineral-wool-install.jpg",
+              alt: "Stone and mineral wool batts fitted between wall studs",
+              fit: "cover",
+            },
             description: [
               "Stone and mineral wool insulation provides high-performance thermal, acoustic and fire-resistant properties for residential and commercial wall applications.",
               "Available in a range of thicknesses and dimensions, these products can be specified to suit different building designs and performance requirements.",

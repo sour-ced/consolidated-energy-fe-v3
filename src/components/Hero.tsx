@@ -6,13 +6,14 @@ export default function Hero() {
   return (
     <section className="relative bg-brand-dark text-white overflow-hidden">
       <Image
-        src="/images/product-solar.jpg"
+        src="/images/home-hero-elevation.jpg"
         alt=""
         fill
         priority
-        className="object-cover opacity-40"
+        sizes="100vw"
+        className="object-cover object-[65%_center]"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/95 to-brand-dark/60" />
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/85 to-brand-dark/20 lg:via-brand-dark/70 lg:to-transparent" />
 
       <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10 py-20 lg:py-28">
         <Reveal className="flex flex-col justify-center max-w-3xl">

@@ -9,7 +9,7 @@ import { OfficeMapProvider } from "@/components/OfficeMapContext";
 export const metadata: Metadata = {
   title: "Contact Us | Consolidated Energy",
   description:
-    "Get in touch with Consolidated Energy. National head office in Keysborough VIC, plus offices in Perth, Brisbane and Canberra. Open a trade account or send an enquiry.",
+    "Get in touch with Consolidated Energy. Head office in Balcatta WA, plus offices in Melbourne, Brisbane and Canberra. Open a trade account or send an enquiry.",
 };
 
 export default function ContactPage() {

@@ -8,6 +8,8 @@ export default function ProductHero({
   tagline,
   description,
   variant,
+  imageSrc,
+  imageAlt,
   badge,
 }: {
   eyebrow: string;
@@ -15,6 +17,8 @@ export default function ProductHero({
   tagline: string;
   description: string;
   variant: ProductVariant;
+  imageSrc?: string;
+  imageAlt?: string;
   badge?: string;
 }) {
   return (
@@ -60,7 +64,7 @@ export default function ProductHero({
 
         <Reveal delay={150} className="flex flex-col justify-center">
           <div className="border border-white/10">
-            <ProductImage variant={variant} />
+            <ProductImage variant={variant} src={imageSrc} alt={imageAlt} />
           </div>
         </Reveal>
       </div>

@@ -19,7 +19,7 @@ export default function ContactSection() {
                 Head Office
               </p>
               <p className="text-[14px] text-ink">
-                102 Indian Drive, Keysborough, VIC, 3173
+                11 Cressall Rd, Balcatta WA 6021
               </p>
             </div>
             <div className="p-5">

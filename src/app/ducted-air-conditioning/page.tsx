@@ -73,6 +73,8 @@ export default function DuctedAirConditioningPage() {
         tagline="Whole-home comfort tailored to your space"
         description="Ducted reverse cycle air conditioning provides an integrated solution for heating and cooling multiple rooms or an entire home or building from one central system."
         variant="aircon"
+        imageSrc="/images/aircon/ducted-hero.jpg"
+        imageAlt="Living room heated and cooled by a ducted air conditioning system"
       />
 
       <section className="bg-surface pt-20 lg:pt-24">

@@ -19,11 +19,15 @@ const IMAGES: Record<ProductVariant, string> = {
 
 export default function ProductImage({
   variant,
+  src,
+  alt = "",
   number,
   tag,
   tagAccent,
 }: {
   variant: ProductVariant;
+  src?: string;
+  alt?: string;
   number?: string;
   tag?: string;
   tagAccent?: boolean;
@@ -31,8 +35,8 @@ export default function ProductImage({
   return (
     <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-200">
       <Image
-        src={IMAGES[variant]}
-        alt=""
+        src={src ?? IMAGES[variant]}
+        alt={alt}
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         className="object-cover"
