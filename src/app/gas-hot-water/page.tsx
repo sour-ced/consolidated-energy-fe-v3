@@ -5,7 +5,6 @@ import DownloadPanel from "@/components/DownloadPanel";
 import BrandCallout from "@/components/BrandCallout";
 import ProductRange from "@/components/ProductRange";
 import ContactSection from "@/components/ContactSection";
-import Icon from "@/components/Icons";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -51,11 +50,6 @@ const WARRANTY_HREF =
   "/downloads/gas-hot-water/Takagi-Continuous-Flow-Water-Heating-Products-Warranty-V1-131013.pdf";
 const USER_MANUAL_HREF =
   "/downloads/gas-hot-water/Takagi-manual-GS-20W-AU56-GS-26W-AU56-06272019-R-k488.pdf";
-
-const TAKAGI_DOCS = [
-  { icon: "shieldCheck" as const, label: "Warranty", href: WARRANTY_HREF },
-  { icon: "clipboard" as const, label: "User Manual", href: USER_MANUAL_HREF },
-];
 
 const TAKAGI_MODELS = [
   {
@@ -144,21 +138,6 @@ export default function GasHotWaterPage() {
                   Our team can help identify the appropriate flow rate, fuel
                   type and configuration for your build.
                 </p>
-              </div>
-              <div className="mt-6 flex flex-wrap gap-3">
-                {TAKAGI_DOCS.map((doc) => (
-                  <a
-                    key={doc.href}
-                    href={doc.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-sm bg-brand-green px-5 py-3 text-[12px] font-bold uppercase tracking-wide text-brand-dark hover:bg-white transition-colors"
-                  >
-                    <Icon name={doc.icon} className="w-4 h-4" />
-                    {doc.label}
-                    <span className="sr-only"> (PDF, opens in a new tab)</span>
-                  </a>
-                ))}
               </div>
             </Reveal>
 

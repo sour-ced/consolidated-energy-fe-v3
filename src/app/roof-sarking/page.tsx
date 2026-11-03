@@ -113,6 +113,10 @@ export default function RoofSarkingPage() {
               "Suitable as an external facing for air conditioning duct wrap",
               "Tested to relevant Australian Standards",
             ],
+            download: {
+              label: "Bradford Sarking Brochure",
+              href: "/downloads/insulation/thermoseal-sarking-brochure.pdf",
+            },
           },
           {
             icon: "sun",

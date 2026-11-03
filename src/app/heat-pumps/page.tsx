@@ -301,7 +301,6 @@ export default function HeatPumpsPage() {
               "Dual anode corrosion protection",
               "Designed for residential applications",
             ],
-            downloads: [DOWNLOADS.m3Brochure, DOWNLOADS.m3Manual],
           },
           {
             icon: "gauge",
@@ -319,7 +318,6 @@ export default function HeatPumpsPage() {
               "Solar-compatible operation",
               "Dual anode corrosion protection",
             ],
-            downloads: [DOWNLOADS.m9Brochure, DOWNLOADS.m9Manual],
           },
         ]}
       />

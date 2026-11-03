@@ -122,6 +122,10 @@ export default function WallWrapsPage() {
               "Reduces draughts to help insulation perform more effectively",
               "Helps protect the building frame from wind-driven rain and dust",
             ],
+            download: {
+              label: "Bradford Wall Wrap Brochure",
+              href: "/downloads/insulation/wall-wrap-comparison-brochure-z5fx.pdf",
+            },
           },
           {
             icon: "wind",
