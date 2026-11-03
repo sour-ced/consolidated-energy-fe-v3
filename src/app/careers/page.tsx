@@ -8,9 +8,34 @@ export const metadata: Metadata = {
     "Find your next opportunity with Consolidated Energy, a national provider of energy-efficient products and services to Australia's residential and commercial construction industries.",
 };
 
-// HiBob careers portal: lists each vacancy with its description and a CV/resume
-// upload. Previously the Header/Footer "Careers" link.
-const VACANCIES_URL = "https://ambrosiumgroup.careers.hibob.com/jobs";
+// Current openings, each linking to its SEEK listing (description + apply).
+// Update this list as roles open and close.
+const VACANCIES = [
+  {
+    title: "Operations Coordinator",
+    location: "Meadowbrook, Brisbane QLD",
+    workType: "Full time",
+    summary:
+      "Support our Queensland team with scheduling, invoicing, orders and customer queries.",
+    href: "https://au.seek.com/job/95486755",
+  },
+  {
+    title: "Business Development Manager",
+    location: "Meadowbrook, Brisbane QLD",
+    workType: "Full time",
+    summary:
+      "Win new clients and build long-term partnerships with homebuilders across Queensland.",
+    href: "https://au.seek.com/job/95406086",
+  },
+  {
+    title: "Delivery Driver (MR)",
+    location: "Meadowbrook, Brisbane QLD",
+    workType: "Full time",
+    summary:
+      "Deliver orders to customers across Brisbane and surrounds, and help the warehouse team with picking, packing and stock.",
+    href: "https://au.seek.com/job/95086825",
+  },
+];
 
 export default function CareersPage() {
   return (
@@ -50,15 +75,55 @@ export default function CareersPage() {
             </p>
             <div className="mt-3">
               <a
-                href={VACANCIES_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#current-opportunities"
                 className="inline-flex items-center justify-center rounded-sm bg-brand-green px-6 py-3.5 text-[12px] font-bold uppercase tracking-wide text-brand-dark hover:bg-white transition-colors"
               >
                 View Current Vacancies
-                <span className="sr-only"> (opens in a new tab)</span>
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="current-opportunities"
+        className="bg-surface py-20 lg:py-24 scroll-mt-24"
+      >
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+          <Reveal className="mb-10">
+            <p className="text-brand-green-dark text-[12px] font-bold uppercase tracking-[0.15em] mb-3">
+              Join Our Team
+            </p>
+            <h2 className="font-display text-3xl sm:text-4xl leading-[1.1] text-ink">
+              Current Opportunities
+            </h2>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {VACANCIES.map((job, i) => (
+              <Reveal key={job.href} delay={(i % 3) * 80} className="h-full">
+                <a
+                  href={job.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex h-full flex-col bg-section border border-ink/10 p-6 lg:p-7 hover:border-brand-green-dark transition-colors"
+                >
+                  <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-ink/45">
+                    {job.workType} · {job.location}
+                  </p>
+                  <h3 className="mt-3 font-display text-xl leading-snug text-ink">
+                    {job.title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-[14px] leading-relaxed text-ink/55">
+                    {job.summary}
+                  </p>
+                  <span className="mt-6 self-start text-[12px] font-bold uppercase tracking-wide text-ink border-b border-ink pb-1 group-hover:text-brand-green-dark group-hover:border-brand-green-dark transition-colors">
+                    View &amp; Apply on SEEK
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </span>
+                </a>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
